@@ -51,8 +51,6 @@ namespace login
 
         private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
         {
-            Frame view = new Frame();
-            this.Frame.Navigate(typeof(redifinirsenha.MainPage));
         }
     }
 }

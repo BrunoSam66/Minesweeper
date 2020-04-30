@@ -44,8 +44,7 @@ namespace perfil
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame view = new Frame();
-            this.Frame.Navigate(typeof(alterardados.MainPage));
+
         }
     }
 }

@@ -116,9 +116,6 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AlterarDados.xaml.cs">
-      <DependentUpon>AlterarDados.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -132,9 +129,6 @@
       <DependentUpon>Perfil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RedifinirSenha.xaml.cs">
-      <DependentUpon>RedifinirSenha.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Registo.xaml.cs">
       <DependentUpon>Registo.xaml</DependentUpon>
     </Compile>
@@ -164,10 +158,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AlterarDados.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Jogo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -179,10 +169,6 @@
     <Page Include="Perfil.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="RedifinirSenha.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Registo.xaml">
       <Generator>MSBuild:Compile</Generator>
