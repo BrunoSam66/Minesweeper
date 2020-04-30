@@ -9,14 +9,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" MaxHeight="768" MaxWidth="800" MinHeight="768" MinWidth="800">
 
     <Grid>
-        
+
         <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,256,0,0" Width="188" TextChanged="TextBox_TextChanged"/>
         <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,341,0,0" Width="188" TextChanged="TextBox_TextChanged_1"/>
         <TextBlock HorizontalAlignment="Left" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Margin="195,263,0,0" RenderTransformOrigin="0.468,1.316"/>
         <TextBlock HorizontalAlignment="Left" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Margin="195,348,0,0" RenderTransformOrigin="1.138,0.368"/>
         <Button Content="Entrar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="320,433,0,0" Width="111" Click="Button_Click"/>
         <Image HorizontalAlignment="Center" Height="159" VerticalAlignment="Top" Width="216" Margin="0,66,0,0" Source="/Assets/min.png"/>
-        <HyperlinkButton Content="Redifinir Senha" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="329,551,0,0" Click="HyperlinkButton_Click_1"/>
+        <HyperlinkButton Content="Jogar Offline" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="337,551,0,0" Click="HyperlinkButton_Click_1" RenderTransformOrigin="0.544,0.531"/>
         <HyperlinkButton Content="Inscrever" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,498,0,0" Click="HyperlinkButton_Click"/>
 
     </Grid>

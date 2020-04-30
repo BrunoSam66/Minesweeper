@@ -90,7 +90,6 @@ namespace Minesweeper
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Program.V_RedefinirSenha.Show();
         }
     }
 }

@@ -115,7 +115,7 @@
             this.perfilToolStripMenuItem1.Name = "perfilToolStripMenuItem1";
             this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.perfilToolStripMenuItem1.Text = "Perfil";
-            this.perfilToolStripMenuItem1.Click += new System.EventHandler(this.perfilToolStripMenuItem1_Click);
+            this.perfilToolStripMenuItem1.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
             // 
             // modoDeJogoToolStripMenuItem
             // 

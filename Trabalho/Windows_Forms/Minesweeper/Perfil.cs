@@ -24,8 +24,6 @@ namespace Minesweeper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Program.V_Perfil.Hide();
-            Program.V_AlterarDados.Show();
         }
     }
 }
