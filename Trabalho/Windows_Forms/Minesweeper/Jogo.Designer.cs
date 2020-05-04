@@ -113,21 +113,21 @@
             // perfilToolStripMenuItem1
             // 
             this.perfilToolStripMenuItem1.Name = "perfilToolStripMenuItem1";
-            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
             this.perfilToolStripMenuItem1.Text = "Perfil";
             this.perfilToolStripMenuItem1.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
             // 
             // modoDeJogoToolStripMenuItem
             // 
             this.modoDeJogoToolStripMenuItem.Name = "modoDeJogoToolStripMenuItem";
-            this.modoDeJogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modoDeJogoToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.modoDeJogoToolStripMenuItem.Text = "Fácil";
             this.modoDeJogoToolStripMenuItem.Click += new System.EventHandler(this.FacilToolStripMenuItem_Click);
             // 
             // fácilToolStripMenuItem1
             // 
             this.fácilToolStripMenuItem1.Name = "fácilToolStripMenuItem1";
-            this.fácilToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.fácilToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
             this.fácilToolStripMenuItem1.Text = "Médio";
             this.fácilToolStripMenuItem1.Click += new System.EventHandler(this.MedioToolStripMenuItem1_Click);
             // 

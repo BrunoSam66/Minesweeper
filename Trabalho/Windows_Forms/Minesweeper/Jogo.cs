@@ -379,7 +379,8 @@ namespace Minesweeper
                     button.Size = new Size(26, 26);
                 }
 
-                MostrarEspaços(null);
+                MostrarEspaços();
+                //show(Convert.ToString("Button2"));
             }
             else if (e.Button == MouseButtons.Right && button.Image == default(Image))
             {
@@ -501,192 +502,149 @@ namespace Minesweeper
             Program.V_Perfil.Show();
         }
 
-        private void MostrarEspaços(object sender)
+
+        private void MostrarEspaços()
         {
             int i = 0;
-            int j = 0;
+            int j;
+            int g;
             int num_botao = NumBotao(Convert.ToString(BotaoClicado));
+            string button;
             var botao = "Button" + num_botao;
-            var button = Convert.ToString(botao).ToCharArray();
             int x = x_botao(botao);
             int y = y_botao(botao);
 
-            if (TemBomba(botao) == false)
+            for (j = y; j >= 0; j--)
             {
-                for (j = y; j <= 0; j--)
+                botao = "Button" + (num_botao - 9*(y-j));
+                if (TemBomba(botao) == false && BombasVolta(botao) == 0)
                 {
-                    for (i = x; i <= 0; i--)
+                    for (i = x; i >= 0; i--)
                     {
-                        num_botao = NumBotao(Convert.ToString(BotaoClicado));
-                        num_botao = num_botao - i - 9 * j;
-                        botao = "Button" + num_botao;
-
-                        if (x != i)
+                        button = "Button" + (i + (9 * j));
+                        if (TemBomba(button) == false && BombasVolta(button) == 0)
                         {
-                            if (TemBomba(botao) == false && BombasVolta(botao) == 0)
+                            show(button);
+                        }
+                        else
+                        {
+                            if (TemBomba(button) == false)
                             {
-                                show(null, botao);
+                                show(button);
                             }
-                            else if (TemBomba(botao) != false || BombasVolta(botao) != 0)
-                            {
-                                show(null, botao);
-                                break;
-                            }
+                            break;
                         }
                     }
 
-                    for (i = x; i >= 9; i++)
+                    for (i = x; i <= 8; i++)
                     {
-                        num_botao = NumBotao(Convert.ToString(BotaoClicado));
-                        num_botao = num_botao + i;
-                        botao = "Button" + num_botao;
-
-                        if (x != i)
+                        button = "Button" + (i + (9 * j));
+                        if (TemBomba(button) == false && BombasVolta(button) == 0)
                         {
-                            if (TemBomba(botao) == false && BombasVolta(botao) == 0)
+                            show(button);
+                        }
+                        else
+                        {
+                            if (TemBomba(button) == false)
                             {
-                                show(null, botao);
+                                show(button);
                             }
-                            else if (TemBomba(botao) != false || BombasVolta(botao) != 0)
-                            {
-                                show(null, botao);
-                                break;
-                            }
+                            break;
                         }
                     }
                 }
-
-                for (j = y; j >= 9; j++)
+                else
                 {
-                    for (i = x; i <= 0; i--)
-                    {
-                        num_botao = NumBotao(Convert.ToString(BotaoClicado));
-                        num_botao = num_botao - i + 9 * j;
-                        botao = "Button" + num_botao;
-
-                        if (x != i)
-                        {
-                            if (TemBomba(botao) == false && BombasVolta(botao) == 0)
-                            {
-                                show(null, botao);
-                            }
-                            else if (TemBomba(botao) != false || BombasVolta(botao) != 0)
-                            {
-                                show(null, botao);
-                                break;
-                            }
-                        }
-                    }
-
-                    for (i = x; i >= 9; i++)
-                    {
-                        num_botao = NumBotao(Convert.ToString(BotaoClicado));
-                        num_botao = num_botao + i;
-                        botao = "Button" + num_botao;
-
-                        if (x != i)
-                        {
-                            if (TemBomba(botao) == false)
-                            {
-                                show(null, botao);
-                            }
-                            else if (TemBomba(botao) != false)
-                            {
-                                show(null, botao);
-                                break;
-                            }
-                        }
-                    }
+                    break;
                 }
             }
 
-        }
+            for (g = y; g <= 8; g++)
+            {
+                botao = "Button" + (num_botao + 9 * (g - y));
+                if (TemBomba(botao) == false && BombasVolta(botao) == 0)
+                {
+                    for (i = x; i >= 0; i--)
+                    {
+                        button = "Button" + (i + (9 * g));
+                        if (TemBomba(button) == false && BombasVolta(button) == 0)
+                        {
+                            show(button);
+                        }
+                        else
+                        {
+                            if (TemBomba(button) == false)
+                            {
+                                show(button);
+                            }
+                            break;
+                        }
+                    }
 
-        private int x_botao(string botao)
-        {
-            int x = 0;
-
-            int num_botao =NumBotao(Convert.ToString(botao));
-
-            if(num_botao >= 0 && num_botao <= 8)
-            {
-                x = 0;
-            }
-            else if (num_botao >= 9 && num_botao <= 17)
-            {
-                x = 1;
-            }
-            else if (num_botao >= 18 && num_botao <= 26)
-            {
-                x = 2;
-            }
-            else if (num_botao >= 27 && num_botao <= 35)
-            {
-                x = 3;
-            }
-            else if (num_botao >= 36 && num_botao <= 44)
-            {
-                x = 4;
-            }
-            else if (num_botao >= 45 && num_botao <= 53)
-            {
-                x = 5;
-            }
-            else if (num_botao >= 54 && num_botao <= 62)
-            {
-                x = 6;
-            }
-            else if (num_botao >= 63 && num_botao <= 71)
-            {
-                x = 7;
-            }
-            else if (num_botao >= 72 && num_botao <= 80)
-            {
-                x = 8;
+                    for (i = x; i <= 8; i++)
+                    {
+                        button = "Button" + (i + (9 * g));
+                        if (TemBomba(button) == false && BombasVolta(button) == 0)
+                        {
+                            show(button);
+                        }
+                        else
+                        {
+                            if (TemBomba(button) == false)
+                            {
+                                show(button);
+                            }
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    break;
+                }
             }
 
-            return x;
         }
 
         private int y_botao(string botao)
         {
             int y = 0;
 
-            int num_botao = NumBotao(Convert.ToString(botao));
+            int num_botao =NumBotao(Convert.ToString(botao));
 
-            if (num_botao == 0 || num_botao % 9 == 0)
+            if(num_botao >= 0 && num_botao <= 8)
             {
                 y = 0;
             }
-            else if (num_botao == 1 || (num_botao - 1) % 9 == 0)
+            else if (num_botao >= 9 && num_botao <= 17)
             {
                 y = 1;
             }
-            else if (num_botao == 2 || (num_botao - 2) % 9 == 0)
+            else if (num_botao >= 18 && num_botao <= 26)
             {
                 y = 2;
             }
-            else if (num_botao == 3 || (num_botao - 3) % 9 == 0)
+            else if (num_botao >= 27 && num_botao <= 35)
             {
                 y = 3;
             }
-            else if (num_botao == 4 || (num_botao - 4) % 9 == 0)
+            else if (num_botao >= 36 && num_botao <= 44)
             {
                 y = 4;
             }
-            else if (num_botao == 5 || (num_botao - 5) % 9 == 0)
+            else if (num_botao >= 45 && num_botao <= 53)
             {
                 y = 5;
             }
-            else if (num_botao == 6 || (num_botao - 6) % 9 == 0)
+            else if (num_botao >= 54 && num_botao <= 62)
             {
                 y = 6;
             }
-            else if (num_botao == 7 || (num_botao - 7) % 9 == 0)
+            else if (num_botao >= 63 && num_botao <= 71)
             {
                 y = 7;
             }
-            else if (num_botao == 8 || (num_botao - 8) % 9 == 0)
+            else if (num_botao >= 72 && num_botao <= 80)
             {
                 y = 8;
             }
@@ -694,97 +652,152 @@ namespace Minesweeper
             return y;
         }
 
-        private void show(object sender,string botao)
+        private int x_botao(string botao)
         {
-            Button button = sender as Button;
+            int x = 0;
 
+            int num_botao = NumBotao(Convert.ToString(botao));
 
-            if (TemBomba(botao) == true)
+            if (num_botao == 0 || num_botao % 9 == 0)
             {
-                button.Image = Image.FromFile("bomba.jpg");
-                button.ImageAlign = ContentAlignment.MiddleCenter;
-                button.FlatStyle = FlatStyle.Flat;
-                button.BackgroundImageLayout = ImageLayout.Stretch;
-                button.Size = new Size(26, 26);
+                x = 0;
+            }
+            else if (num_botao == 1 || (num_botao - 1) % 9 == 0)
+            {
+                x = 1;
+            }
+            else if (num_botao == 2 || (num_botao - 2) % 9 == 0)
+            {
+                x = 2;
+            }
+            else if (num_botao == 3 || (num_botao - 3) % 9 == 0)
+            {
+                x = 3;
+            }
+            else if (num_botao == 4 || (num_botao - 4) % 9 == 0)
+            {
+                x = 4;
+            }
+            else if (num_botao == 5 || (num_botao - 5) % 9 == 0)
+            {
+                x = 5;
+            }
+            else if (num_botao == 6 || (num_botao - 6) % 9 == 0)
+            {
+                x = 6;
+            }
+            else if (num_botao == 7 || (num_botao - 7) % 9 == 0)
+            {
+                x = 7;
+            }
+            else if (num_botao == 8 || (num_botao - 8) % 9 == 0)
+            {
+                x = 8;
+            }
 
-                ResetTime();
-                isActive = false;
+            return x;
+        }
 
-                MessageBox.Show("   Game Over!", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (BombasVolta(botao) == 1)
+        private void show(string botao)
+        {
+            //Button button = sender as Button;
+
+            foreach (Button button in Panel.Controls)
             {
-                button.Image = Image.FromFile("1.png");
-                button.ImageAlign = ContentAlignment.MiddleCenter;
-                button.FlatStyle = FlatStyle.Flat;
-                button.BackgroundImageLayout = ImageLayout.Stretch;
-                button.Size = new Size(26, 26);
+                if (button.Name == Convert.ToString(botao))
+                {
+                    if (TemBomba(botao) == true)
+                    {
+                        button.Image = Image.FromFile("bomba.jpg");
+                        button.ImageAlign = ContentAlignment.MiddleCenter;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackgroundImageLayout = ImageLayout.Stretch;
+                        button.Size = new Size(26, 26);
+
+                        ResetTime();
+                        isActive = false;
+
+                        MessageBox.Show("   Game Over!", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else if (BombasVolta(botao) == 1)
+                    {
+                        button.Image = Image.FromFile("1.png");
+                        button.ImageAlign = ContentAlignment.MiddleCenter;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackgroundImageLayout = ImageLayout.Stretch;
+                        button.Size = new Size(26, 26);
+                    }
+                    else if (BombasVolta(botao) == 2)
+                    {
+                        button.Image = Image.FromFile("2.png");
+                        button.ImageAlign = ContentAlignment.MiddleCenter;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackgroundImageLayout = ImageLayout.Stretch;
+                        button.Size = new Size(26, 26);
+                    }
+                    else if (BombasVolta(botao) == 3)
+                    {
+                        button.Image = Image.FromFile("3.png");
+                        button.ImageAlign = ContentAlignment.MiddleCenter;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackgroundImageLayout = ImageLayout.Stretch;
+                        button.Size = new Size(26, 26);
+                    }
+                    else if (BombasVolta(botao) == 4)
+                    {
+                        button.Image = Image.FromFile("4.png");
+                        button.ImageAlign = ContentAlignment.MiddleCenter;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackgroundImageLayout = ImageLayout.Stretch;
+                        button.Size = new Size(26, 26);
+                    }
+                    else if (BombasVolta(botao) == 5)
+                    {
+                        button.Image = Image.FromFile("5.png");
+                        button.ImageAlign = ContentAlignment.MiddleCenter;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackgroundImageLayout = ImageLayout.Stretch;
+                        button.Size = new Size(26, 26);
+                    }
+                    else if (BombasVolta(botao) == 6)
+                    {
+                        button.Image = Image.FromFile("6.png");
+                        button.ImageAlign = ContentAlignment.MiddleCenter;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackgroundImageLayout = ImageLayout.Stretch;
+                        button.Size = new Size(26, 26);
+                    }
+                    else if (BombasVolta(botao) == 7)
+                    {
+                        button.Image = Image.FromFile("7.png");
+                        button.ImageAlign = ContentAlignment.MiddleCenter;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackgroundImageLayout = ImageLayout.Stretch;
+                        button.Size = new Size(26, 26);
+                    }
+                    else if (BombasVolta(botao) == 8)
+                    {
+                        button.Image = Image.FromFile("8.png");
+                        button.ImageAlign = ContentAlignment.MiddleCenter;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackgroundImageLayout = ImageLayout.Stretch;
+                        button.Size = new Size(26, 26);
+                    }
+                    else
+                    {
+                        button.Image = Image.FromFile("0.png");
+                        button.ImageAlign = ContentAlignment.MiddleCenter;
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.BackgroundImageLayout = ImageLayout.Stretch;
+                        button.Size = new Size(26, 26);
+                    }
+                    break;
+                }
+                else
+                {
+
+                }
             }
-            else if (BombasVolta(botao) == 2)
-            {
-                button.Image = Image.FromFile("2.png");
-                button.ImageAlign = ContentAlignment.MiddleCenter;
-                button.FlatStyle = FlatStyle.Flat;
-                button.BackgroundImageLayout = ImageLayout.Stretch;
-                button.Size = new Size(26, 26);
-            }
-            else if (BombasVolta(botao) == 3)
-            {
-                button.Image = Image.FromFile("3.png");
-                button.ImageAlign = ContentAlignment.MiddleCenter;
-                button.FlatStyle = FlatStyle.Flat;
-                button.BackgroundImageLayout = ImageLayout.Stretch;
-                button.Size = new Size(26, 26);
-            }
-            else if (BombasVolta(botao) == 4)
-            {
-                button.Image = Image.FromFile("4.png");
-                button.ImageAlign = ContentAlignment.MiddleCenter;
-                button.FlatStyle = FlatStyle.Flat;
-                button.BackgroundImageLayout = ImageLayout.Stretch;
-                button.Size = new Size(26, 26);
-            }
-            else if (BombasVolta(botao) == 5)
-            {
-                button.Image = Image.FromFile("5.png");
-                button.ImageAlign = ContentAlignment.MiddleCenter;
-                button.FlatStyle = FlatStyle.Flat;
-                button.BackgroundImageLayout = ImageLayout.Stretch;
-                button.Size = new Size(26, 26);
-            }
-            else if (BombasVolta(botao) == 6)
-            {
-                button.Image = Image.FromFile("6.png");
-                button.ImageAlign = ContentAlignment.MiddleCenter;
-                button.FlatStyle = FlatStyle.Flat;
-                button.BackgroundImageLayout = ImageLayout.Stretch;
-                button.Size = new Size(26, 26);
-            }
-            else if (BombasVolta(botao) == 7)
-            {
-                button.Image = Image.FromFile("7.png");
-                button.ImageAlign = ContentAlignment.MiddleCenter;
-                button.FlatStyle = FlatStyle.Flat;
-                button.BackgroundImageLayout = ImageLayout.Stretch;
-                button.Size = new Size(26, 26);
-            }
-            else if (BombasVolta(botao) == 8)
-            {
-                button.Image = Image.FromFile("8.png");
-                button.ImageAlign = ContentAlignment.MiddleCenter;
-                button.FlatStyle = FlatStyle.Flat;
-                button.BackgroundImageLayout = ImageLayout.Stretch;
-                button.Size = new Size(26, 26);
-            }
-            else
-            {
-                button.Image = Image.FromFile("0.png");
-                button.ImageAlign = ContentAlignment.MiddleCenter;
-                button.FlatStyle = FlatStyle.Flat;
-                button.BackgroundImageLayout = ImageLayout.Stretch;
-                button.Size = new Size(26, 26);
-            }
-          
         }
     }
 }
