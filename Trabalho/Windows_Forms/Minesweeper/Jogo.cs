@@ -305,6 +305,15 @@ namespace Minesweeper
                     isActive = false;
 
                     MessageBox.Show("   Game Over!", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    if (dificuldade == Dificuldade.facil)
+                    {
+                        FacilToolStripMenuItem_Click(null, null);
+                    }
+                    else
+                    {
+                        MedioToolStripMenuItem1_Click(null, null);
+                    }
                 }
                 else if (BombasVolta(BotaoClicado) == 1)
                 {
@@ -377,10 +386,10 @@ namespace Minesweeper
                     button.FlatStyle = FlatStyle.Flat;
                     button.BackgroundImageLayout = ImageLayout.Stretch;
                     button.Size = new Size(26, 26);
-                }
 
-                MostrarEspaços();
-                //show(Convert.ToString("Button2"));
+                    MostrarEspacos();
+                    //MostrarEspacos_y();
+                }
             }
             else if (e.Button == MouseButtons.Right && button.Image == default(Image))
             {
@@ -503,7 +512,7 @@ namespace Minesweeper
         }
 
 
-        private void MostrarEspaços()
+        private void MostrarEspacos()
         {
             int i = 0;
             int j;
@@ -606,6 +615,24 @@ namespace Minesweeper
 
         }
 
+        private void MostrarEspacos_y()
+        {
+            int i = 0;
+            int j;
+            int g;
+            int num_botao = NumBotao(Convert.ToString(BotaoClicado));
+            string button;
+            var botao = "Button" + num_botao;
+            int x = x_botao(botao);
+            int y = y_botao(botao);
+
+            for (i = y; i <= 0; i--)
+            {
+
+            }
+
+        }
+
         private int y_botao(string botao)
         {
             int y = 0;
@@ -700,8 +727,6 @@ namespace Minesweeper
 
         private void show(string botao)
         {
-            //Button button = sender as Button;
-
             foreach (Button button in Panel.Controls)
             {
                 if (button.Name == Convert.ToString(botao))
