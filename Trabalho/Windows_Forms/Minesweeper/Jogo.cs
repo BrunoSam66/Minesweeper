@@ -388,7 +388,7 @@ namespace Minesweeper
                     button.Size = new Size(26, 26);
 
                     MostrarEspacos();
-                    //MostrarEspacos_y();
+                    MostrarEspacos_y();
                 }
             }
             else if (e.Button == MouseButtons.Right && button.Image == default(Image))
@@ -511,7 +511,6 @@ namespace Minesweeper
             Program.V_Perfil.Show();
         }
 
-
         private void MostrarEspacos()
         {
             int i = 0;
@@ -626,11 +625,96 @@ namespace Minesweeper
             int x = x_botao(botao);
             int y = y_botao(botao);
 
-            for (i = y; i <= 0; i--)
-            {
 
+            for (j = x; j >= 0; j--)
+            {
+                botao = "Button" + (num_botao - (x-j));
+                if (TemBomba(botao) == false && BombasVolta(botao) == 0)
+                {
+                    for (i = y; i >= 0; i--)
+                    {
+                        button = "Button" + (j + (9 * i));
+                        if (TemBomba(button) == false && BombasVolta(button) == 0)
+                        {
+                            show(button);
+                        }
+                        else
+                        {
+                            if (TemBomba(button) == false)
+                            {
+                                show(button);
+                            }
+                            break;
+                        }
+                    }
+
+                    for (i = y; i <= 8; i++)
+                    {
+                        button = "Button" + (j + (9 * i));
+                        if (TemBomba(button) == false && BombasVolta(button) == 0)
+                        {
+                            show(button);
+                        }
+                        else
+                        {
+                            if (TemBomba(button) == false)
+                            {
+                                show(button);
+                            }
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    break;
+                }
             }
 
+            for (g = x; g <= 8; g++)
+            {
+                botao = "Button" + (num_botao + (g - x));
+                if (TemBomba(botao) == false && BombasVolta(botao) == 0)
+                {
+                    for (i = y; i >= 0; i--)
+                    {
+                        button = "Button" + (g + (9 * i));
+                        if (TemBomba(button) == false && BombasVolta(button) == 0)
+                        {
+                            show(button);
+                        }
+                        else
+                        {
+                            if (TemBomba(button) == false)
+                            {
+                                show(button);
+                            }
+                            break;
+                        }
+                    }
+
+                    for (i = y; i <= 8; i++)
+                    {
+                        button = "Button" + (g + (9 * i));
+                        if (TemBomba(button) == false && BombasVolta(button) == 0)
+                        {
+                            show(button);
+                        }
+                        else
+                        {
+                            if (TemBomba(button) == false)
+                            {
+                                show(button);
+                            }
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
 
         private int y_botao(string botao)
