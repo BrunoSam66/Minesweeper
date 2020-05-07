@@ -26,3 +26,16 @@ C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\Windows_Forms\Minesweep
 C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\Windows_Forms\Minesweeper\bin\Debug\Minesweeper.exe.config
 C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\Windows_Forms\Minesweeper\bin\Debug\Minesweeper.exe
 C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\Windows_Forms\Minesweeper\bin\Debug\Minesweeper.pdb
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\bin\Debug\Minesweeper.exe.config
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\bin\Debug\Minesweeper.exe
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\bin\Debug\Minesweeper.pdb
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Windows Forms.csprojAssemblyReference.cache
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.Inscrever.resources
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.Jogo.resources
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.Login.resources
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.Perfil.resources
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.Properties.Resources.resources
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Windows Forms.csproj.GenerateResource.cache
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Windows Forms.csproj.CoreCompileInputs.cache
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.exe
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.pdb
