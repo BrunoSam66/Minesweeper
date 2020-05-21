@@ -84,7 +84,7 @@ namespace Minesweeper
             else
              {
                 // assume a autenticação e obtem o ID do resultado...para ser usado noutros pedidos
-                MessageBox.Show(xmlResposta.Element("resultado").Element("objeto").Element("id").Value, "Entrou", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); ;
+                MessageBox.Show(xmlResposta.Element("resultado").Element("objeto").Element("ID").Value, "Entrou", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
              }
 
 
