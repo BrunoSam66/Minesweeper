@@ -1,1 +1,1 @@
-C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\uwp.csproj;x86
+E:\trabalho\Trabalho\UWP\trabalho\uwp.csproj;x86

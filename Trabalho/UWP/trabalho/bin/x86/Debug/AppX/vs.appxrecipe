@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>LAPTOP-KLB365GG</Machine>
-    <WindowsUser>crist</WindowsUser>
+    <Machine>BRUNO-SAMPAIO</Machine>
+    <WindowsUser>Asus</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>1e1852c9-00fa-4dd8-bb61-59a3575ebdf8</PackageIdentityName>
     <PackageIdentityPublisher>CN=telmo</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>E:\trabalho\Trabalho\UWP\trabalho\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>F229CA4D48A2215A3F7141F77F5EA036072DBEF557EB4EFFCEC7D0A5CFD3EDFE</RegisteredManifestChecksum>
+    <LayoutDir>E:\trabalho\Trabalho\UWP\trabalho\bin\x86\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>EBD9FE5BB9B2C1A74DB08AB19014B880A9EFD256E3251C10DDD239AB4CBBCC7F</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>1e1852c9-00fa-4dd8-bb61-59a3575ebdf8_1.0.0.0_x86__56zpnd7d081vc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>1e1852c9-00fa-4dd8-bb61-59a3575ebdf8_56zpnd7d081vc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>1e1852c9-00fa-4dd8-bb61-59a3575ebdf8</RegisteredPackageID>
@@ -27,16 +27,16 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="E:\trabalho\Trabalho\UWP\trabalho\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-04-30T16:13:53.720</Modified>
+      <Modified>2020-05-21T08:41:23.259</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\bin\x86\Debug\Minesweeper.exe">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\bin\x86\Debug\Minesweeper.exe">
       <PackagePath>entrypoint\Minesweeper.exe</PackagePath>
-      <Modified>2020-04-30T16:13:53.096</Modified>
+      <Modified>2020-05-21T08:41:20.600</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -498,95 +498,95 @@
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2018-10-23T01:33:40.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Assets\fig2.png">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Assets\fig2.png">
       <PackagePath>Assets\fig2.png</PackagePath>
-      <Modified>2020-04-17T09:33:06.000</Modified>
+      <Modified>2020-05-07T08:37:54.909</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Assets\id.png">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Assets\id.png">
       <PackagePath>Assets\id.png</PackagePath>
-      <Modified>2020-04-22T08:18:00.000</Modified>
+      <Modified>2020-05-07T08:37:54.909</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Assets\min.png">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Assets\min.png">
       <PackagePath>Assets\min.png</PackagePath>
-      <Modified>2020-04-24T18:08:04.000</Modified>
+      <Modified>2020-05-07T08:37:54.910</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Assets\smile.png">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Assets\smile.png">
       <PackagePath>Assets\smile.png</PackagePath>
-      <Modified>2020-04-24T18:31:02.000</Modified>
+      <Modified>2020-05-07T08:37:54.910</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2020-04-21T15:28:26.000</Modified>
+      <Modified>2020-05-07T08:37:54.907</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-04-21T15:28:26.000</Modified>
+      <Modified>2020-05-07T08:37:54.908</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-04-21T15:28:26.000</Modified>
+      <Modified>2020-05-07T08:37:54.908</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-04-21T15:28:26.000</Modified>
+      <Modified>2020-05-07T08:37:54.908</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-04-21T15:28:26.000</Modified>
+      <Modified>2020-05-07T08:37:54.908</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-04-21T15:28:26.000</Modified>
+      <Modified>2020-05-07T08:37:54.909</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-04-21T15:28:26.000</Modified>
+      <Modified>2020-05-07T08:37:54.909</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2020-04-23T15:26:24.000</Modified>
+      <Modified>2020-05-07T08:37:54.912</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\bin\x86\Debug\Minesweeper.xr.xml">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\bin\x86\Debug\Minesweeper.xr.xml">
       <PackagePath>Minesweeper.xr.xml</PackagePath>
-      <Modified>2020-04-30T16:13:52.908</Modified>
+      <Modified>2020-05-07T08:37:55.534</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-04-30T16:13:52.947</Modified>
+      <Modified>2020-05-21T08:41:19.974</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\bin\x86\Debug\Jogo.xbf">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\bin\x86\Debug\Jogo.xbf">
       <PackagePath>Jogo.xbf</PackagePath>
-      <Modified>2020-04-30T16:13:52.942</Modified>
+      <Modified>2020-05-21T08:41:19.944</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\bin\x86\Debug\Login.xbf">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\bin\x86\Debug\Login.xbf">
       <PackagePath>Login.xbf</PackagePath>
-      <Modified>2020-04-30T16:13:52.947</Modified>
+      <Modified>2020-05-21T08:41:19.975</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\bin\x86\Debug\Perfil.xbf">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\bin\x86\Debug\Perfil.xbf">
       <PackagePath>Perfil.xbf</PackagePath>
-      <Modified>2020-04-30T16:13:52.948</Modified>
+      <Modified>2020-05-21T08:41:19.976</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\bin\x86\Debug\Registo.xbf">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\bin\x86\Debug\Registo.xbf">
       <PackagePath>Registo.xbf</PackagePath>
-      <Modified>2020-04-30T16:13:52.948</Modified>
+      <Modified>2020-05-21T08:41:19.976</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2018-10-23T00:44:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-04-30T15:27:49.828</Modified>
+      <Modified>2020-05-07T14:20:29.475</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\OneDrive\Ambiente de Trabalho\G7\Trabalho\UWP\trabalho\bin\x86\Debug\Core\Minesweeper.exe">
+    <AppxPackagedFile Include="E:\trabalho\Trabalho\UWP\trabalho\bin\x86\Debug\Core\Minesweeper.exe">
       <PackagePath>Minesweeper.exe</PackagePath>
-      <Modified>2020-04-30T16:13:53.702</Modified>
+      <Modified>2020-05-21T08:41:23.230</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
