@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Perfil));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
@@ -42,7 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonAlterarDados = new System.Windows.Forms.Button();
             this.textBoxPais = new System.Windows.Forms.TextBox();
             this.textBoxBestTime = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,13 +51,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(128, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(123, 107);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBoxEmail
             // 
@@ -166,16 +164,6 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Primeiro nome";
             // 
-            // buttonAlterarDados
-            // 
-            this.buttonAlterarDados.Location = new System.Drawing.Point(111, 354);
-            this.buttonAlterarDados.Name = "buttonAlterarDados";
-            this.buttonAlterarDados.Size = new System.Drawing.Size(114, 23);
-            this.buttonAlterarDados.TabIndex = 24;
-            this.buttonAlterarDados.Text = "Alterar dados";
-            this.buttonAlterarDados.UseVisualStyleBackColor = true;
-            this.buttonAlterarDados.Click += new System.EventHandler(this.button1_Click);
-            // 
             // textBoxPais
             // 
             this.textBoxPais.Location = new System.Drawing.Point(128, 277);
@@ -222,7 +210,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 389);
+            this.ClientSize = new System.Drawing.Size(348, 364);
             this.Controls.Add(this.textBoxWorstTime);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxBestTime);
@@ -234,7 +222,6 @@
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxFirstName);
-            this.Controls.Add(this.buttonAlterarDados);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -264,7 +251,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonAlterarDados;
         private System.Windows.Forms.TextBox textBoxPais;
         private System.Windows.Forms.TextBox textBoxBestTime;
         private System.Windows.Forms.Label label7;

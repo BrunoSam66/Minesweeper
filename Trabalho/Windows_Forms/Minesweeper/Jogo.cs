@@ -12,6 +12,7 @@ namespace Minesweeper
 {
     public partial class Jogo : Form
     {
+
         private enum Dificuldade { facil, medio }
         private Dificuldade dificuldade = Dificuldade.facil;
 
@@ -387,8 +388,11 @@ namespace Minesweeper
                     button.BackgroundImageLayout = ImageLayout.Stretch;
                     button.Size = new Size(26, 26);
 
-                    MostrarEspacos();
-                    MostrarEspacos_y();
+                    //MostrarTudo(BotaoClicado);
+                    MostrarEspacos(BotaoClicado);
+                    MostrarEspacos_y(BotaoClicado);
+                    MostrarEspacos_diagonal(BotaoClicado);
+
                 }
             }
             else if (e.Button == MouseButtons.Right && button.Image == default(Image))
@@ -511,12 +515,12 @@ namespace Minesweeper
             Program.V_Perfil.Show();
         }
 
-        private void MostrarEspacos()
+        private void MostrarEspacos(string botaoC)
         {
             int i = 0;
             int j;
             int g;
-            int num_botao = NumBotao(Convert.ToString(BotaoClicado));
+            int num_botao = NumBotao(Convert.ToString(botaoC));
             string button;
             var botao = "Button" + num_botao;
             int x = x_botao(botao);
@@ -614,12 +618,12 @@ namespace Minesweeper
 
         }
 
-        private void MostrarEspacos_y()
+        private void MostrarEspacos_y(string botaoC)
         {
             int i = 0;
             int j;
             int g;
-            int num_botao = NumBotao(Convert.ToString(BotaoClicado));
+            int num_botao = NumBotao(Convert.ToString(botaoC));
             string button;
             var botao = "Button" + num_botao;
             int x = x_botao(botao);
@@ -715,6 +719,190 @@ namespace Minesweeper
                     break;
                 }
             }
+        }
+
+        private void MostrarEspacos_diagonal(string botaoC)
+        {
+            int i = 0;
+            int j;
+            int num_botao = NumBotao(Convert.ToString(botaoC));
+            string button;
+            var botao = "Button" + num_botao;
+            int x = x_botao(botao);
+            int y = y_botao(botao);
+
+            for (i=x-1;i>=0;i--) //diagonal cima-esquerda
+            {
+                j = y - 1;
+
+                button = "Button" +((j * 9) + i);
+                if (TemBomba(button) == false && BombasVolta(button) == 0)
+                {
+                    show(button);
+                }
+                else
+                {
+                    if (TemBomba(button) == false)
+                    {
+                        show(button);
+                    }
+                    break;
+                }
+
+                j--;
+            }
+
+            for (i = x + 1; i <= 8; i++) //diagonal cima-direta
+            {
+                j = y - 1;
+
+                button = "Button" + ((j * 9) + i);
+                if (TemBomba(button) == false && BombasVolta(button) == 0)
+                {
+                    show(button);
+                }
+                else
+                {
+                    if (TemBomba(button) == false)
+                    {
+                        show(button);
+                    }
+                    break;
+                }
+
+                j--;
+            }
+
+            for (i = x - 1; i >= 0; i--) //diagonal baixo-esquerda
+            {
+                j = y + 1;
+
+                button = "Button" + ((j * 9) + i);
+                if (TemBomba(button) == false && BombasVolta(button) == 0)
+                {
+                    show(button);
+                }
+                else
+                {
+                    if (TemBomba(button) == false)
+                    {
+                        show(button);
+                    }
+                    break;
+                }
+
+                j++;
+            }
+
+            for (i = x + 1; i >= 8; i++) //diagonal baixo-direita
+            {
+                j = y + 1;
+
+                button = "Button" + ((j * 9) + i);
+                if (TemBomba(button) == false && BombasVolta(button) == 0)
+                {
+                    show(button);
+                }
+                else
+                {
+                    if (TemBomba(button) == false)
+                    {
+                        show(button);
+                    }
+                    break;
+                }
+
+                j++;
+
+            }
+        }
+
+        private void MostrarTudo(string botaoC)
+        {
+            int i = 0;
+            int j;
+            int num_botao = NumBotao(Convert.ToString(botaoC));
+            string button;
+            var botao = "Button" + num_botao;
+            int x = x_botao(botao);
+            int y = y_botao(botao);
+
+            for (j = y; j >= 0; j--)
+            {
+                for (i = x; i >= 0; i--)
+                {
+                    button = "Button" + (i + (9 * j));
+
+                    if (TemBomba(button) == false && BombasVolta(button) == 0)
+                    {
+                        MostrarEspacos(button);
+                        MostrarEspacos_y(button);
+                        MostrarEspacos_diagonal(button);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            for (j = y; j >= 0; j--)
+            {
+                for (i = x; i >= 0; i--)
+                {
+                    button = "Button" + (i + (9 * j));
+
+                    if (TemBomba(button) == false && BombasVolta(button) == 0)
+                    {
+                        MostrarEspacos(button);
+                        MostrarEspacos_y(button);
+                        MostrarEspacos_diagonal(button);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            for (j = y; j >= 0; j--)
+            {
+                for (i = x; i >= 0; i--)
+                {
+                    button = "Button" + (i + (9 * j));
+
+                    if (TemBomba(button) == false && BombasVolta(button) == 0)
+                    {
+                        MostrarEspacos(button);
+                        MostrarEspacos_y(button);
+                        MostrarEspacos_diagonal(button);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            for (j = y; j >= 0; j--)
+            {
+                for (i = x; i >= 0; i--)
+                {
+                    button = "Button" + (i + (9 * j));
+
+                    if (TemBomba(button) == false && BombasVolta(button) == 0)
+                    {
+                        MostrarEspacos(button);
+                        MostrarEspacos_y(button);
+                        MostrarEspacos_diagonal(button);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+            
         }
 
         private int y_botao(string botao)
@@ -908,5 +1096,6 @@ namespace Minesweeper
                 }
             }
         }
+
     }
 }

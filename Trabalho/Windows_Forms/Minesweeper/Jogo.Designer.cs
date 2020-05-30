@@ -40,6 +40,7 @@
             this.perfilToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.modoDeJogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fácilToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.top10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +94,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
+            this.menuToolStripMenuItem,
+            this.top10ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(294, 24);
@@ -113,23 +115,29 @@
             // perfilToolStripMenuItem1
             // 
             this.perfilToolStripMenuItem1.Name = "perfilToolStripMenuItem1";
-            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
+            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.perfilToolStripMenuItem1.Text = "Perfil";
             this.perfilToolStripMenuItem1.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
             // 
             // modoDeJogoToolStripMenuItem
             // 
             this.modoDeJogoToolStripMenuItem.Name = "modoDeJogoToolStripMenuItem";
-            this.modoDeJogoToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.modoDeJogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modoDeJogoToolStripMenuItem.Text = "Fácil";
             this.modoDeJogoToolStripMenuItem.Click += new System.EventHandler(this.FacilToolStripMenuItem_Click);
             // 
             // fácilToolStripMenuItem1
             // 
             this.fácilToolStripMenuItem1.Name = "fácilToolStripMenuItem1";
-            this.fácilToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
+            this.fácilToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.fácilToolStripMenuItem1.Text = "Médio";
             this.fácilToolStripMenuItem1.Click += new System.EventHandler(this.MedioToolStripMenuItem1_Click);
+            // 
+            // top10ToolStripMenuItem
+            // 
+            this.top10ToolStripMenuItem.Name = "top10ToolStripMenuItem";
+            this.top10ToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.top10ToolStripMenuItem.Text = "Top 10";
             // 
             // Jogo
             // 
@@ -165,5 +173,6 @@
         private System.Windows.Forms.ToolStripMenuItem perfilToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem modoDeJogoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fácilToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem top10ToolStripMenuItem;
     }
 }

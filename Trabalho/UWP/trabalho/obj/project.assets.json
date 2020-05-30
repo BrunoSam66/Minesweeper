@@ -27970,24 +27970,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {},
+    "C:\\Users\\crist\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\trabalho\\Trabalho\\UWP\\trabalho\\uwp.csproj",
+      "projectUniqueName": "C:\\Users\\crist\\Source\\Repos\\campominas2\\Trabalho\\UWP\\trabalho\\uwp.csproj",
       "projectName": "uwp",
-      "projectPath": "E:\\trabalho\\Trabalho\\UWP\\trabalho\\uwp.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "E:\\trabalho\\Trabalho\\UWP\\trabalho\\obj\\",
+      "projectPath": "C:\\Users\\crist\\Source\\Repos\\campominas2\\Trabalho\\UWP\\trabalho\\uwp.csproj",
+      "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\crist\\Source\\Repos\\campominas2\\Trabalho\\UWP\\trabalho\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

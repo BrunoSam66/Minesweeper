@@ -96,12 +96,12 @@
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(146, 306);
+            this.linkLabel3.Location = new System.Drawing.Point(154, 310);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(85, 13);
+            this.linkLabel3.Size = new System.Drawing.Size(66, 13);
             this.linkLabel3.TabIndex = 9;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Redefenir senha";
+            this.linkLabel3.Text = "Jogar Offline";
             this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // Login

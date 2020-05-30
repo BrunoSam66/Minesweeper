@@ -15,6 +15,10 @@ namespace Minesweeper
 {
     public partial class Login : Form
     {
+        public string Utilizador;
+        public enum ModoDeJogo { online, offline }
+        public ModoDeJogo modoDeJogo = ModoDeJogo.offline;
+
         public Login()
         {
             InitializeComponent();
@@ -38,21 +42,18 @@ namespace Minesweeper
         private void button2_Click(object sender, EventArgs e)
         {
             //Program.V_Login.Hide();
-            // Program.V_Jogo.Show();
-
-
 
             //Prepara o pedido ao servidor com o URL adequado
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://prateleira.utad.priv:1234/LPDSW/2019-2020/Autentica");
            
             // Com o acesso usa HTTPS e o servidor usar cerificados autoassinados, temos de configurar o cliente para aceitar sempre o certificado.
-             ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
+            ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
             
             // prepara os dados do pedido a partir de uma string só com a estrutura do XML (sem dados)
             XDocument xmlPedido = XDocument.Parse("<credenciais><username></username><password></password></credenciais>");
             //preenche os dados no XML
-             xmlPedido.Element("credenciais").Element("username").Value = "xcoelho"; // colocar aqui o username do utilizador
-             xmlPedido.Element("credenciais").Element("password").Value = "1234"; // colocar aqui a palavra passe do utilizador
+            xmlPedido.Element("credenciais").Element("username").Value = textBoxUsername.Text; // colocar aqui o username do utilizador
+            xmlPedido.Element("credenciais").Element("password").Value = textBoxPassword.Text; // colocar aqui a palavra passe do utilizador
             
             string mensagem = xmlPedido.Root.ToString();
            
@@ -62,8 +63,8 @@ namespace Minesweeper
             request.ContentLength = data.Length; // comprimento dos dados enviado no pedido
           
             Stream newStream = request.GetRequestStream(); // obtem a referência do stream associado ao pedido...
-           newStream.Write(data, 0, data.Length);// ... que permite escrever os dados a ser enviados ao servidor
-           newStream.Close();
+            newStream.Write(data, 0, data.Length);// ... que permite escrever os dados a ser enviados ao servidor
+            newStream.Close();
             
             HttpWebResponse response = (HttpWebResponse)request.GetResponse(); // faz o envio do pedido
             
@@ -74,27 +75,28 @@ namespace Minesweeper
             response.Close();
             readStream.Close();
             // converte para objeto XML para facilitar a extração da informação e ...
-             XDocument xmlResposta = XDocument.Parse(resultado);
+            XDocument xmlResposta = XDocument.Parse(resultado);
              // ...interpretar o resultado de acordo com a lógica da aplicação (exemplificativo)
-             if (xmlResposta.Element("resultado").Element("status").Value == "ERRO")
-                 {
+            if (xmlResposta.Element("resultado").Element("status").Value == "ERRO")
+            {
               // apresenta mensagem de erro usando o texto (contexto) da resposta
-            MessageBox.Show(xmlResposta.Element("resultado").Element("contexto").Value,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
-             }
+              MessageBox.Show(xmlResposta.Element("resultado").Element("contexto").Value,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
             else
-             {
+            {
                 // assume a autenticação e obtem o ID do resultado...para ser usado noutros pedidos
-                MessageBox.Show(xmlResposta.Element("resultado").Element("objeto").Element("ID").Value, "Entrou", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
-             }
-
-
+                Utilizador = Convert.ToString(textBoxUsername.Text);
+                MessageBox.Show(xmlResposta.Element("resultado").Element("objeto").Element("ID").Value, "Entrou", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                modoDeJogo = ModoDeJogo.offline;
+                Program.V_Jogo.Show();
+            }
         }
+
         public bool AcceptAllCertifications(object sender, System.Security.Cryptography.X509Certificates.X509Certificate certification, System.Security.Cryptography.X509Certificates.X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors)
         {
             return true;
 
         }
-
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -147,6 +149,8 @@ namespace Minesweeper
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            modoDeJogo = ModoDeJogo.offline;
+            Program.V_Jogo.Show();
         }
     }
 }
