@@ -33,7 +33,7 @@
         <Button x:ConnectionId='20' x:Name="button17" Content="" HorizontalAlignment="Left" Margin="591,197,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
         <Button x:ConnectionId='21' x:Name="button18" Content="" HorizontalAlignment="Left" Margin="151,252,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
         <Button x:ConnectionId='22' x:Name="button19" Content="" HorizontalAlignment="Left" Margin="206,252,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
-        <Button x:ConnectionId='23' x:Name="button20" Content="" HorizontalAlignment="Left" Margin="261,252,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
+        <Button x:ConnectionId='23' x:Name="button20" Content="" HorizontalAlignment="Left" Margin="261,252,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"                       />
         <Button x:ConnectionId='24' x:Name="button21" Content="" HorizontalAlignment="Left" Margin="316,252,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
         <Button x:ConnectionId='25' x:Name="button22" Content="" HorizontalAlignment="Left" Margin="371,252,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
         <Button x:ConnectionId='26' x:Name="button23" Content="" HorizontalAlignment="Left" Margin="426,252,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
@@ -50,10 +50,10 @@
         <Button x:ConnectionId='37' x:Name="button34" Content="" HorizontalAlignment="Left" Margin="536,307,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
         <Button x:ConnectionId='38' x:Name="button35" Content="" HorizontalAlignment="Left" Margin="591,307,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
         <Button x:ConnectionId='39' x:Name="button36" Content="" HorizontalAlignment="Left" Margin="151,362,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
-        <Button x:ConnectionId='40' x:Name="button37" Content="" HorizontalAlignment="Left" Margin="206,362,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
+        <Button x:ConnectionId='40' x:Name="button37" Content="" HorizontalAlignment="Left" Margin="206,362,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.5,0.5"/>
         <Button x:ConnectionId='41' x:Name="button38" Content="" HorizontalAlignment="Left" Margin="261,362,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
         <Button x:ConnectionId='42' x:Name="button39" Content="" HorizontalAlignment="Left" Margin="316,362,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
-        <Button x:ConnectionId='43' x:Name="button40" Content="" HorizontalAlignment="Left" Margin="371,362,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
+        <Button x:ConnectionId='43' x:Name="button40" Content="" HorizontalAlignment="Left" Margin="371,362,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"                       />
         <Button x:ConnectionId='44' x:Name="button41" Content="" HorizontalAlignment="Left" Margin="426,362,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
         <Button x:ConnectionId='45' x:Name="button42" Content="" HorizontalAlignment="Left" Margin="481,362,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>
         <Button x:ConnectionId='46' x:Name="button43" Content="" HorizontalAlignment="Left" Margin="536,362,0,0" VerticalAlignment="Top" Height="50" Width="50" RenderTransformOrigin="0.907,0.599"/>

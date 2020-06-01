@@ -5,6 +5,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Input;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -42,6 +44,10 @@ namespace jogo
 
         private int time = 0;
         private bool isActive = false;
+        private object rootPage;
+        private object NotifyType;
+
+        public object ImageLayout { get; private set; }
 
         //função para redimensionar o forms falta
 
@@ -75,7 +81,7 @@ namespace jogo
                 button.Width = 26;
                 button.Tag = i;    
                 button.Name = string.Format("Button{0}", i);
-                button.Click += bunton_click;
+               // button.Click += bunton_click; fazer o evento do click
                
               
 
@@ -92,13 +98,130 @@ namespace jogo
 
         }
 
-        private void bunton_click(object sender, RoutedEventArgs e)
+        private async System.Threading.Tasks.Task bunton_clickAsync(object sender, PointerRoutedEventArgs e)
         {
             Button button = sender as Button;
             isActive = true;
             ///.----------------falta o cod para depois do button ser clicado 
             ///
+            PointerPoint currentPoint = e.GetCurrentPoint(null);
+            PointerPointProperties props = currentPoint.Properties;
+            if (!props.IsRightButtonPressed)
+            {
+                BotaoClicado = button.Name;
+
+                if (TemBomba(BotaoClicado) == true)
+                {
+                  //Abrir a bomba no button
+                    button.Height = 26;
+                    button.Width = 26;
+                    ResetTime();
+                    isActive = false;
+
+                    var messageDialog = new MessageDialog("No internet connection has been found.");
+
+                    // Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
+                    messageDialog.Commands.Add(new UICommand("Game over!!!",new UICommandInvokedHandler(this.CommandInvokedHandler)));
+                    messageDialog.Commands.Add(new UICommand("Close",new UICommandInvokedHandler(this.CommandInvokedHandler)));
+
+                    // Set the command that will be invoked by default
+                    messageDialog.DefaultCommandIndex = 0;
+
+                    // Set the command to be invoked when escape is pressed
+                    messageDialog.CancelCommandIndex = 1;
+
+                    // Show the message dialog
+                    await messageDialog.ShowAsync();
+
+                    if (dificuldade == Dificuldade.facil)
+                    {
+                        FacilToolStripMenuItem_Click(null, null);
+                    }
+                    else
+                    {
+                        MedioToolStripMenuItem1_Click(null, null);
+                    }
+                }
+                else if (BombasVolta(BotaoClicado) == 1)
+                {
+                    //img1
+                    button.Width = 26;
+                    button.Height = 26;
+                }
+                else if (BombasVolta(BotaoClicado) == 2)
+                {
+                //img2
+                    button.Width = 26;
+                    button.Height = 26;
+                }
+                else if (BombasVolta(BotaoClicado) == 3)
+                {
+                /// im3
+                    button.Width = 26;
+                    button.Height = 26;
+                }
+                else if (BombasVolta(BotaoClicado) == 4)
+                {
+                 //   im4 
+                    button.Width = 26;
+                    button.Height = 26;
+                }
+                else if (BombasVolta(BotaoClicado) == 5)
+                {
+                   //Abrir imagem 5
+                    button.Width = 26;
+                    button.Height = 26;
+                }
+                else if (BombasVolta(BotaoClicado) == 6)
+                {
+                //Abrir imagem 6.png no button
+                    button.Width = 26;
+                    button.Height = 26;
+                }
+                else if (BombasVolta(BotaoClicado) == 7)
+                {
+                 //AAbrir imagem 7.png no button
+                    button.Width = 26;
+                    button.Height = 26;
+                }
+                else if (BombasVolta(BotaoClicado) == 8)
+                {
+                   //Abrir imagem 8.png no button
+                    button.Width = 26;
+                    button.Height = 26;
+                }
+                else
+                {
+                   //abrir imagem 0.png no button
+                    button.Width = 26;
+                    button.Height = 26;
+
+                    //MostrarTudo(BotaoClicado);
+                    MostrarEspacos(BotaoClicado);
+                    MostrarEspacos_y(BotaoClicado);
+                    MostrarEspacos_diagonal(BotaoClicado);
+
+                }
+            }
+            else if (props.IsRightButtonPressed )// falta verificar se ainda não foi clicado && button.Image == default(Image))
+            {
+                BotaoClicado = button.Name;
+
+              //mostrar a imagem da bandeira no button
+                button.Width = 26;
+                button.Height = 26;
+            }
+        
+
+        }
+
+        private void CommandInvokedHandler(IUICommand command)
+        {
             
+            /*// Display message showing the label of the command that was invoked
+            rootPage.NotifyUser("The '" + command.Label + "' command has been selected.",
+                NotifyType.StatusMessage);*/
+               
         }
 
         private void GerarMinas(int[] mines1)

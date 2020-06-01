@@ -52,3 +52,4 @@ C:\Users\crist\Source\Repos\campominas2\Trabalho\Windows_Forms\Minesweeper\obj\D
 C:\Users\crist\Source\Repos\campominas2\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Windows Forms.csproj.CoreCompileInputs.cache
 C:\Users\crist\Source\Repos\campominas2\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.exe
 C:\Users\crist\Source\Repos\campominas2\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.pdb
+E:\trabalho\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.Top10.resources
