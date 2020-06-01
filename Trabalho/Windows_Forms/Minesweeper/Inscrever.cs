@@ -11,6 +11,7 @@ using System.IO;
 using System.Net;
 using System.Xml.Linq;
 
+
 namespace Minesweeper
 {
     public partial class Inscrever : Form
@@ -180,21 +181,22 @@ namespace Minesweeper
             }
         }
 
-        private void FotoBase64()
-        {
-            using (Image image = pictureBox1.Image)
-            {
-                using (MemoryStream m = new MemoryStream())
-                {
-                    image.Save(m, image.RawFormat);
-                    byte[] imageBytes = m.ToArray();
+   
 
-                    // Convert byte[] to Base64 String
-                    string base64String = Convert.ToBase64String(imageBytes);
-                    fotografia = Convert.ToString(base64String);
-                }
+        private string FotoBase64(Image file)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                file.Save(memoryStream, file.RawFormat);
+                byte[] imageBytes = memoryStream.ToArray();
+                return Convert.ToBase64String(imageBytes);
             }
+
+
         }
+
+
+
 
         private string Registo(object sender, EventArgs e)
         {
@@ -266,7 +268,7 @@ namespace Minesweeper
             }
             else
             {
-                FotoBase64();
+               
 
                 firstName = Convert.ToString(textBoxFirstName.Text);
                 lastName = Convert.ToString(textBoxLastName.Text);
@@ -274,7 +276,7 @@ namespace Minesweeper
                 password = Convert.ToString(textBoxPassword.Text);
                 email = Convert.ToString(textBoxEmail.Text);
                 pais = Convert.ToString(comboBoxPais.Text);
-
+                fotografia = FotoBase64(pictureBox1.Image);
                 return "ok";
             }
         }
@@ -352,16 +354,6 @@ namespace Minesweeper
 
         private void button2_Click(object sender, EventArgs e)
         {
-                
-        }
-
-        private void comboBoxPais_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
             string imageLocation = " ";
 
             try
@@ -380,6 +372,17 @@ namespace Minesweeper
             {
                 MessageBox.Show("Erro", "ERRO", MessageBoxButtons.OK);
             }
+                
+        }
+
+        private void comboBoxPais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
