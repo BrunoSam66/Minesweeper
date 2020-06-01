@@ -36,7 +36,7 @@ namespace Minesweeper
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+ 
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -86,9 +86,10 @@ namespace Minesweeper
             {
                 // assume a autenticação e obtem o ID do resultado...para ser usado noutros pedidos
                 Utilizador = Convert.ToString(textBoxUsername.Text);
+                Jogo mostrarjogo = new Jogo(textBoxUsername.Text);
+                mostrarjogo.Show();
                 MessageBox.Show(xmlResposta.Element("resultado").Element("objeto").Element("ID").Value, "Entrou", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 modoDeJogo = ModoDeJogo.offline;
-                Program.V_Jogo.Show();
             }
         }
 
