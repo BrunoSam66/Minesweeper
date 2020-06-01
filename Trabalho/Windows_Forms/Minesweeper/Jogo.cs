@@ -1097,5 +1097,14 @@ namespace Minesweeper
             }
         }
 
+        private void top10ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //asdfhj
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

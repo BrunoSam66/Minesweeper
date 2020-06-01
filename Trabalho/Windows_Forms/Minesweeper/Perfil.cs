@@ -90,16 +90,19 @@ namespace Minesweeper
             //Program.V_Login.Hide();
 
             //Prepara o pedido ao servidor com o URL adequado
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://prateleira.utad.priv:1234/LPDSW/2019-2020/Autentica");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://prateleira.utad.priv:1234/LPDSW/2019-2020/perfil/");
 
             // Com o acesso usa HTTPS e o servidor usar cerificados autoassinados, temos de configurar o cliente para aceitar sempre o certificado.
             ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
 
             // prepara os dados do pedido a partir de uma string só com a estrutura do XML (sem dados)
-            XDocument xmlPedido = XDocument.Parse("<credenciais><username></username><password></password></credenciais>");
+            XDocument xmlPedido = XDocument.Parse("<resultado><status></status><contexto></contexto><objeto><perfil><nomeabreviado></nomeabreviado><email></email><fotografia></fotografia><pais></pais><jogos><ganhos></ganhos><perdidos></perdidos></jogos><tempos><facil></facil><medio></medio></tempos></perfil></objeto></resultado>");
             //preenche os dados no XML
-            xmlPedido.Element("credenciais").Element("username").Value = textBoxUsername.Text; // colocar aqui o username do utilizador
-            xmlPedido.Element("credenciais").Element("password").Value = textBoxPassword.Text; // colocar aqui a palavra passe do utilizador
+
+            xmlPedido.Element("resultado").Element("objeto").Element("perfil").Element("email").Value = email; 
+            xmlPedido.Element("resultado").Element("objeto").Element("perfil").Element("fotografia").Value = fotografia; 
+            xmlPedido.Element("resultado").Element("objeto").Element("perfil").Element("pais").Value = pais;
+
 
             string mensagem = xmlPedido.Root.ToString();
 
