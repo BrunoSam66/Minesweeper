@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -104,6 +105,7 @@ namespace jogo
             isActive = true;
             ///.----------------falta o cod para depois do button ser clicado 
             ///
+            BitmapImage x = new BitmapImage();
             PointerPoint currentPoint = e.GetCurrentPoint(null);
             PointerPointProperties props = currentPoint.Properties;
             if (!props.IsRightButtonPressed)
@@ -112,26 +114,31 @@ namespace jogo
 
                 if (TemBomba(BotaoClicado) == true)
                 {
-                  //Abrir a bomba no button
+                    //Abrir a bomba no button
+                   x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/bomba.png", UriKind.RelativeOrAbsolute));
+                    Thickness margin = new Thickness(1, 1, 1, 1);
+                    button.Margin = margin;
+                   
+                    button.IsEnabled = false;
+
+                    var image = new Image();
+                    image.Source = x;
+                    // button.Content = image;
+                    ((Image)button.Content).Source = x;
+                    //  button.Background =
                     button.Height = 26;
                     button.Width = 26;
                     ResetTime();
                     isActive = false;
 
-                    var messageDialog = new MessageDialog("Game over!!");
+                    ContentDialog dialog = new ContentDialog()
+                    {
+                        Title = "Game Over!!!",
+                        Content = "Try again!!!",
+                        PrimaryButtonText = "OK"
 
-                    // Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
-                    messageDialog.Commands.Add(new UICommand("Game over!!!",new UICommandInvokedHandler(this.CommandInvokedHandler)));
-                    messageDialog.Commands.Add(new UICommand("Close",new UICommandInvokedHandler(this.CommandInvokedHandler)));
-
-                    // Set the command that will be invoked by default
-                    messageDialog.DefaultCommandIndex = 0;
-
-                    // Set the command to be invoked when escape is pressed
-                    messageDialog.CancelCommandIndex = 1;
-
-                    // Show the message dialog
-                    await messageDialog.ShowAsync();
+                    };
+                    await dialog.ShowAsync();
 
                     if (dificuldade == Dificuldade.facil)
                     {
@@ -145,57 +152,149 @@ namespace jogo
                 else if (BombasVolta(BotaoClicado) == 1)
                 {
                     //img1
+                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/1.png", UriKind.RelativeOrAbsolute));
+                    Thickness margin = new Thickness(1, 1, 1, 1);
+                    button.Margin = margin;
+                  
+                    button.IsEnabled = false;
+
+                    var image = new Image();
+                    image.Source = x;
+                    // button.Content = image;
+                    ((Image)button.Content).Source = x;
                     button.Width = 26;
                     button.Height = 26;
                 }
                 else if (BombasVolta(BotaoClicado) == 2)
                 {
-                //img2
+                    //img2
+                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/2.png", UriKind.RelativeOrAbsolute));
+                    Thickness margin = new Thickness(1, 1, 1, 1);
+                    button.Margin = margin;
+                   
+                    button.IsEnabled = false;
+
+                    var image = new Image();
+                    image.Source = x;
+                    // button.Content = image;
+                    ((Image)button.Content).Source = x;
                     button.Width = 26;
                     button.Height = 26;
                 }
                 else if (BombasVolta(BotaoClicado) == 3)
                 {
-                /// im3
+                    /// im3
+                     x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/3.png", UriKind.RelativeOrAbsolute));
+                    Thickness margin = new Thickness(1, 1, 1, 1);
+                    button.Margin = margin;
+                    
+                    button.IsEnabled = false;
+
+                    var image = new Image();
+                    image.Source = x;
+                    // button.Content = image;
+                    ((Image)button.Content).Source = x;
                     button.Width = 26;
                     button.Height = 26;
                 }
                 else if (BombasVolta(BotaoClicado) == 4)
                 {
-                 //   im4 
+                    //   im4 
+                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/4.png", UriKind.RelativeOrAbsolute));
+                    Thickness margin = new Thickness(1, 1, 1, 1);
+                    button.Margin = margin;
+                   
+                    button.IsEnabled = false;
+
+                    var image = new Image();
+                    image.Source = x;
+                    // button.Content = image;
+                    ((Image)button.Content).Source = x;
                     button.Width = 26;
                     button.Height = 26;
                 }
                 else if (BombasVolta(BotaoClicado) == 5)
                 {
-                   //Abrir imagem 5
+                    //Abrir imagem 5
+                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/5.png", UriKind.RelativeOrAbsolute));
+                    Thickness margin = new Thickness(1, 1, 1, 1);
+                    button.Margin = margin;
+                   
+                    button.IsEnabled = false;
+
+                    var image = new Image();
+                    image.Source = x;
+                    // button.Content = image;
+                    ((Image)button.Content).Source = x;
                     button.Width = 26;
                     button.Height = 26;
                 }
                 else if (BombasVolta(BotaoClicado) == 6)
                 {
-                //Abrir imagem 6.png no button
+                    //Abrir imagem 6.png no button
+                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/6.png", UriKind.RelativeOrAbsolute));
+                    Thickness margin = new Thickness(1, 1, 1, 1);
+                    button.Margin = margin;
+                   
+                    button.IsEnabled = false;
+
+                    var image = new Image();
+                    image.Source = x;
+                    // button.Content = image;
+                    ((Image)button.Content).Source = x;
                     button.Width = 26;
                     button.Height = 26;
                 }
                 else if (BombasVolta(BotaoClicado) == 7)
                 {
-                 //AAbrir imagem 7.png no button
+                    //AAbrir imagem 7.png no button
+                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/7.png", UriKind.RelativeOrAbsolute));
+                    Thickness margin = new Thickness(1, 1, 1, 1);
+                    button.Margin = margin;
+                 
+                    button.IsEnabled = false;
+
+                    var image = new Image();
+                    image.Source = x;
+                    // button.Content = image;
+                    ((Image)button.Content).Source = x;
+                  
                     button.Width = 26;
                     button.Height = 26;
                 }
                 else if (BombasVolta(BotaoClicado) == 8)
                 {
-                   //Abrir imagem 8.png no button
+                    //Abrir imagem 8.png no button
+                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/8.png", UriKind.RelativeOrAbsolute));
+                    Thickness margin = new Thickness(1, 1, 1, 1);
+                    button.Margin = margin;
+                
+                    button.IsEnabled = false;
+
+                    var image = new Image();
+                    image.Source = x;
+                    // button.Content = image;
+                    ((Image)button.Content).Source = x;
+                
                     button.Width = 26;
                     button.Height = 26;
                 }
                 else
                 {
-                   //abrir imagem 0.png no button
+                    //abrir imagem 0.png no button
+                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/0.png", UriKind.RelativeOrAbsolute));
+                    Thickness margin = new Thickness(1, 1, 1, 1);
+                    button.Margin = margin;
+            
+                    button.IsEnabled = false;
+
+                    var image = new Image();
+                    image.Source = x;
+                    // button.Content = image;
+                    ((Image)button.Content).Source = x;
                     button.Width = 26;
                     button.Height = 26;
-
+                    
                     //MostrarTudo(BotaoClicado);
                     MostrarEspacos(BotaoClicado);
                     MostrarEspacos_y(BotaoClicado);
@@ -207,7 +306,21 @@ namespace jogo
             {
                 BotaoClicado = button.Name;
 
-              //mostrar a imagem da bandeira no button
+                //mostrar a imagem da bandeira no button
+
+
+                x= new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/bandeira.png", UriKind.RelativeOrAbsolute));
+
+                Thickness margin = new Thickness(1, 1, 1, 1);
+                    button.Margin = margin;
+              
+                button.IsEnabled = false;
+
+                var image = new Image();
+                image.Source = x;
+                // button.Content = image;
+                ((Image)button.Content).Source = x;
+
                 button.Width = 26;
                 button.Height = 26;
             }
@@ -215,17 +328,8 @@ namespace jogo
 
         }
 
-        private void CommandInvokedHandler(IUICommand command)
-        {
-            
-            /*// Display message showing the label of the command that was invoked
-            rootPage.NotifyUser("The '" + command.Label + "' command has been selected.",
-                NotifyType.StatusMessage);*/
-               
-        }
-
-        private void GerarMinas(int[] mines1)
-        {
+             private void GerarMinas(int[] mines1)
+              {
             int i;
 
             int random;

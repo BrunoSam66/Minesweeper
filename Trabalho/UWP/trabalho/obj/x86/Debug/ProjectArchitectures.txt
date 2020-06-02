@@ -1,1 +1,1 @@
-E:\trabalho\Trabalho\UWP\trabalho\uwp.csproj;x86
+D:\trabalho\Trabalho\UWP\trabalho\uwp.csproj;x86
