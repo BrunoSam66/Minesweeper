@@ -118,7 +118,7 @@ namespace jogo
                     ResetTime();
                     isActive = false;
 
-                    var messageDialog = new MessageDialog("No internet connection has been found.");
+                    var messageDialog = new MessageDialog("Game over!!");
 
                     // Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
                     messageDialog.Commands.Add(new UICommand("Game over!!!",new UICommandInvokedHandler(this.CommandInvokedHandler)));

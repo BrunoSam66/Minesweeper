@@ -41,7 +41,7 @@ namespace Minesweeper
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Program.V_Login.Hide();
+            Program.V_Login.Hide();
 
             //Prepara o pedido ao servidor com o URL adequado
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://prateleira.utad.priv:1234/LPDSW/2019-2020/Autentica");
