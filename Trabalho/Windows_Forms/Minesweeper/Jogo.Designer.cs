@@ -46,21 +46,19 @@
             // 
             // textBoxPontos
             // 
-            this.textBoxPontos.Location = new System.Drawing.Point(16, 42);
-            this.textBoxPontos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPontos.Location = new System.Drawing.Point(12, 34);
             this.textBoxPontos.Name = "textBoxPontos";
             this.textBoxPontos.ReadOnly = true;
-            this.textBoxPontos.Size = new System.Drawing.Size(101, 22);
+            this.textBoxPontos.Size = new System.Drawing.Size(77, 20);
             this.textBoxPontos.TabIndex = 0;
             this.textBoxPontos.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Panel
             // 
             this.Panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Panel.Location = new System.Drawing.Point(16, 81);
-            this.Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Panel.Location = new System.Drawing.Point(12, 66);
             this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(360, 315);
+            this.Panel.Size = new System.Drawing.Size(270, 256);
             this.Panel.TabIndex = 0;
             this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Paint);
             this.Panel.Layout += new System.Windows.Forms.LayoutEventHandler(this.LayoutPanel);
@@ -68,10 +66,9 @@
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(173, 38);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(130, 31);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 32);
+            this.button1.Size = new System.Drawing.Size(26, 26);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -86,11 +83,10 @@
             // 
             this.textBoxTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTime.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxTime.Location = new System.Drawing.Point(273, 43);
-            this.textBoxTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTime.Location = new System.Drawing.Point(205, 35);
             this.textBoxTime.Name = "textBoxTime";
             this.textBoxTime.ReadOnly = true;
-            this.textBoxTime.Size = new System.Drawing.Size(101, 23);
+            this.textBoxTime.Size = new System.Drawing.Size(77, 20);
             this.textBoxTime.TabIndex = 2;
             this.textBoxTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxTime.TextChanged += new System.EventHandler(this.textBoxTime_TextChanged);
@@ -103,8 +99,7 @@
             this.top10ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(392, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(294, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -115,43 +110,43 @@
             this.modoDeJogoToolStripMenuItem,
             this.fácilToolStripMenuItem1});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
             this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
             // perfilToolStripMenuItem1
             // 
             this.perfilToolStripMenuItem1.Name = "perfilToolStripMenuItem1";
-            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(127, 26);
+            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.perfilToolStripMenuItem1.Text = "Perfil";
             this.perfilToolStripMenuItem1.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
             // 
             // modoDeJogoToolStripMenuItem
             // 
             this.modoDeJogoToolStripMenuItem.Name = "modoDeJogoToolStripMenuItem";
-            this.modoDeJogoToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.modoDeJogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modoDeJogoToolStripMenuItem.Text = "Fácil";
             this.modoDeJogoToolStripMenuItem.Click += new System.EventHandler(this.FacilToolStripMenuItem_Click);
             // 
             // fácilToolStripMenuItem1
             // 
             this.fácilToolStripMenuItem1.Name = "fácilToolStripMenuItem1";
-            this.fácilToolStripMenuItem1.Size = new System.Drawing.Size(127, 26);
+            this.fácilToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.fácilToolStripMenuItem1.Text = "Médio";
             this.fácilToolStripMenuItem1.Click += new System.EventHandler(this.MedioToolStripMenuItem1_Click);
             // 
             // top10ToolStripMenuItem
             // 
             this.top10ToolStripMenuItem.Name = "top10ToolStripMenuItem";
-            this.top10ToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.top10ToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.top10ToolStripMenuItem.Text = "Top 10";
             this.top10ToolStripMenuItem.Click += new System.EventHandler(this.top10ToolStripMenuItem_Click);
             // 
             // Jogo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 407);
+            this.ClientSize = new System.Drawing.Size(294, 331);
             this.Controls.Add(this.textBoxTime);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Panel);
@@ -159,7 +154,6 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Jogo";
             this.Text = "Jogo";
             this.Load += new System.EventHandler(this.Jogo_Load);

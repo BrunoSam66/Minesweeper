@@ -28,9 +28,17 @@ namespace Minesweeper
         private int time = 0;
         private bool isActive = false;
 
+        string utilizador;
+
         public Jogo()
         {
             InitializeComponent();
+        }
+
+        public Jogo(string user)
+        {
+            InitializeComponent();
+            utilizador = user;
         }
 
         public void ChangeSize(int width, int height)
@@ -512,7 +520,9 @@ namespace Minesweeper
         private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetTime();
-            Program.V_Perfil.Show();
+
+            Perfil mostrarperfil = new Perfil(utilizador);
+            mostrarperfil.Show();
         }
 
         private void MostrarEspacos(string botaoC)
@@ -1099,7 +1109,7 @@ namespace Minesweeper
 
         private void top10ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //asdfhj
+            Program.V_Top10.Show();
         }
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
