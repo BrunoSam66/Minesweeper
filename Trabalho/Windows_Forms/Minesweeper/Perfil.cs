@@ -15,16 +15,31 @@ namespace Minesweeper
 {
     public partial class Perfil : Form
     {
+        string ModoDeJogo;
+
         public Perfil()
         {
             InitializeComponent();
+
+            if (ModoDeJogo == "online")
+            {
+                ImportarPerfil();
+            }
+
         }
 
-        public Perfil(string utilizador)
+        public Perfil(string utilizador, string mododejogo)
         {
             InitializeComponent();
             textBoxUsername.Text = utilizador;
+            ModoDeJogo = mododejogo;
+            if (mododejogo == "online")
+            {
+                ImportarPerfil();
+            }
+
         }
+
 
         private string firstName { get; set; }
         private string lastName { get; set; }
@@ -93,24 +108,16 @@ namespace Minesweeper
         private void ImportarPerfil()
         {
             //Prepara o pedido ao servidor com o URL adequado
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://prateleira.utad.priv:1234/LPDSW/2019-2020/perfil/" +textBoxUsername.Text); // ou outro qualquer username
-           
-           // Com o acesso usa HTTPS e o servidor usar cerificados autoassinados, tempos de configurar o cliente para aceitar sempre o certificado.
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://prateleira.utad.priv:1234/LPDSW/2019-2020/perfil/" + textBoxUsername.Text); // ou outro qualquer username
+
+            // Com o acesso usa HTTPS e o servidor usar cerificados autoassinados, tempos de configurar o cliente para aceitar sempre o certificado.
             ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
 
-            XDocument xmlPedido = XDocument.Parse("<resultado><status></status><contexto></contexto><objeto><perfil><nomeabreviado></nomeabreviado><email></email><fotografia></fotografia><pais></pais><jogos><ganhos></ganhos><perdidos></perdidos></jogos><tempos><facil></facil><medio></medio></tempos></perfil></objeto></resultado>");
-
-            textBoxEmail.Text = xmlPedido.Element("resultado").Element("objeto").Element("perfil").Element("email").Value;
-            //xmlPedido.Element("resultado").Element("objeto").Element("perfil").Element("fotografia").Value = fotografia; 
-            textBoxPais.Text = xmlPedido.Element("resultado").Element("objeto").Element("perfil").Element("pais").Value;
-
             request.Method = "GET"; // método usado para enviar o pedido
-
             HttpWebResponse response = (HttpWebResponse)request.GetResponse(); // faz o envio do pedido
- 
+
             Stream receiveStream = response.GetResponseStream(); // obtem o stream associado à resposta.
             StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8); // Canaliza o stream para um leitor de stream de nível superior com o formato de codificação necessário.
-
             string resultado = readStream.ReadToEnd();
 
             response.Close();
@@ -122,21 +129,32 @@ namespace Minesweeper
             if (xmlResposta.Element("resultado").Element("status").Value == "ERRO")
             {
                 // apresenta mensagem de erro usando o texto (contexto) da resposta
-                MessageBox.Show(xmlResposta.Element("resultado").Element("contexto").Value,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(xmlResposta.Element("resultado").Element("contexto").Value, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                // obtem todos os elementos do perfil do jogador...
-                // ...como, por exemplo, a fotografia:
-
-                /*string base64Imagem = xmlResposta.Element("resultado").Element("objeto").Element("perfil").Element("fotografia").Value;
+                string base64Imagem = xmlResposta.Element("resultado").Element("objeto").Element("perfil").Element("fotografia").Value;
                 string base64 = base64Imagem.Split(',')[1]; // retira a parte da string correspondente aos bytes da imagem..
                 byte[] bytes = Convert.FromBase64String(base64); //...converte para array de bytes...
                 Image image = Image.FromStream(new MemoryStream(bytes));//... e, por fim, para Image
-                
-                // pode mostrar a imagem num qualquer componente...como por exemplo:
+                                                                        // pode mostrar a imagem num qualquer componente...como por exemplo:
                 pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-                pictureBox1.BackgroundImage = image;*/
+                pictureBox1.BackgroundImage = image;
+
+                string nomeabreviado = xmlResposta.Element("resultado").Element("objeto").Element("perfil").Element("nomeabreviado").Value;
+                firstName = nomeabreviado.Split(' ').FirstOrDefault();
+                lastName = nomeabreviado.Split(' ').LastOrDefault();
+
+                textBoxFirstName.Text = Convert.ToString(firstName);
+                textBoxLastName.Text = Convert.ToString(lastName);
+                textBoxEmail.Text = xmlResposta.Element("resultado").Element("objeto").Element("perfil").Element("email").Value;
+
+                textBoxPais.Text = xmlResposta.Element("resultado").Element("objeto").Element("perfil").Element("pais").Value;
+
+                textBoxVJogos.Text = xmlResposta.Element("resultado").Element("objeto").Element("perfil").Element("jogos").Element("ganhos").Value;
+                textBoxDJogos.Text = xmlResposta.Element("resultado").Element("objeto").Element("perfil").Element("jogos").Element("perdidos").Value;
+                //textBoxTFacil.Text = xmlResposta.Element("resultado").Element("objeto").Element("perfil").Element("tempos").Element("facil").Value;
+                //textBoxTMedio.Text = xmlResposta.Element("resultado").Element("objeto").Element("perfil").Element("tempos").Element("medio").Value;
             }
         }
 
@@ -167,7 +185,11 @@ namespace Minesweeper
 
         private void Perfil_load(object sender, EventArgs e)
         {
-            ImportarPerfil();
+            if (ModoDeJogo == "online")
+            {
+                ImportarPerfil();
+            }
         }
+
     }
 }

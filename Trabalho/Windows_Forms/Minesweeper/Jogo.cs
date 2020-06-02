@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Net;
+using System.Xml.Linq;
 
 namespace Minesweeper
 {
@@ -29,16 +32,25 @@ namespace Minesweeper
         private bool isActive = false;
 
         string utilizador;
+        string id;
+        string ModoDeJogo;
+        int PrimeiroClick = 0;
+        string novadificuldade;
+
+        string tempo_final;
+        int vitoria = 0;
 
         public Jogo()
         {
             InitializeComponent();
         }
 
-        public Jogo(string user)
+        public Jogo(string idUser, string user, string mododejogo)
         {
             InitializeComponent();
+            id = idUser;
             utilizador = user;
+            ModoDeJogo = Convert.ToString(mododejogo);
         }
 
         public void ChangeSize(int width, int height)
@@ -298,11 +310,40 @@ namespace Minesweeper
 
             isActive = true;
 
+            if (PrimeiroClick == 0)
+            {
+                if (ModoDeJogo == "online")
+                {
+                    PedidoNovoJogo();
+                }
+                PrimeiroClick++;
+            }
+
             if (e.Button == MouseButtons.Left)
             {
                 BotaoClicado = button.Name;
 
-                if (TemBomba(BotaoClicado) == true)
+                if (Victoria() == true)
+                {
+                    tempo_final = Convert.ToString(textBoxTime.Text);
+                    vitoria = 1;
+                    if (ModoDeJogo == "online")
+                    {
+                        GuardarJogo();
+                    }
+                    ResetTime();
+                    MessageBox.Show("Parabéns, Ganhou o jogo!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (dificuldade == Dificuldade.facil)
+                    {
+                        FacilToolStripMenuItem_Click(null, null);
+                    }
+                    else
+                    {
+                        MedioToolStripMenuItem1_Click(null, null);
+                    }
+                }
+                else if (TemBomba(BotaoClicado) == true && Victoria() == false)
                 {
                     button.Image = Image.FromFile("bomba.jpg");
                     button.ImageAlign = ContentAlignment.MiddleCenter;
@@ -310,6 +351,12 @@ namespace Minesweeper
                     button.BackgroundImageLayout = ImageLayout.Stretch;
                     button.Size = new Size(26, 26);
 
+                    tempo_final = Convert.ToString(textBoxTime.Text);
+                    vitoria = 0;
+                    if (ModoDeJogo == "online")
+                    {
+                        GuardarJogo();
+                    }
                     ResetTime();
                     isActive = false;
 
@@ -396,10 +443,9 @@ namespace Minesweeper
                     button.BackgroundImageLayout = ImageLayout.Stretch;
                     button.Size = new Size(26, 26);
 
-                    //MostrarTudo(BotaoClicado);
                     MostrarEspacos(BotaoClicado);
                     MostrarEspacos_y(BotaoClicado);
-                    MostrarEspacos_diagonal(BotaoClicado);
+                    //MostrarEspacos_diagonal(BotaoClicado);
 
                 }
             }
@@ -422,6 +468,7 @@ namespace Minesweeper
 
         private void Jogo_Load(object sender, EventArgs e)
         {
+
             if (dificuldade == Dificuldade.facil)
             {
                 bombas = 10;
@@ -487,6 +534,7 @@ namespace Minesweeper
 
         private void MedioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            PrimeiroClick = 0;
             isActive = false;
             ResetTime();
 
@@ -503,6 +551,7 @@ namespace Minesweeper
 
         private void FacilToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            PrimeiroClick = 0;
             isActive = false;
             ResetTime();
 
@@ -521,7 +570,7 @@ namespace Minesweeper
         {
             ResetTime();
 
-            Perfil mostrarperfil = new Perfil(utilizador);
+            Perfil mostrarperfil = new Perfil(utilizador, Convert.ToString(ModoDeJogo));
             mostrarperfil.Show();
         }
 
@@ -538,7 +587,7 @@ namespace Minesweeper
 
             for (j = y; j >= 0; j--)
             {
-                botao = "Button" + (num_botao - 9*(y-j));
+                botao = "Button" + (num_botao - 9 * (y - j));
                 if (TemBomba(botao) == false && BombasVolta(botao) == 0)
                 {
                     for (i = x; i >= 0; i--)
@@ -642,7 +691,7 @@ namespace Minesweeper
 
             for (j = x; j >= 0; j--)
             {
-                botao = "Button" + (num_botao - (x-j));
+                botao = "Button" + (num_botao - (x - j));
                 if (TemBomba(botao) == false && BombasVolta(botao) == 0)
                 {
                     for (i = y; i >= 0; i--)
@@ -741,11 +790,11 @@ namespace Minesweeper
             int x = x_botao(botao);
             int y = y_botao(botao);
 
-            for (i=x-1;i>=0;i--) //diagonal cima-esquerda
+            for (i = x - 1; i >= 0; i--) //diagonal cima-esquerda
             {
                 j = y - 1;
 
-                button = "Button" +((j * 9) + i);
+                button = "Button" + ((j * 9) + i);
                 if (TemBomba(button) == false && BombasVolta(button) == 0)
                 {
                     show(button);
@@ -827,101 +876,13 @@ namespace Minesweeper
             }
         }
 
-        private void MostrarTudo(string botaoC)
-        {
-            int i = 0;
-            int j;
-            int num_botao = NumBotao(Convert.ToString(botaoC));
-            string button;
-            var botao = "Button" + num_botao;
-            int x = x_botao(botao);
-            int y = y_botao(botao);
-
-            for (j = y; j >= 0; j--)
-            {
-                for (i = x; i >= 0; i--)
-                {
-                    button = "Button" + (i + (9 * j));
-
-                    if (TemBomba(button) == false && BombasVolta(button) == 0)
-                    {
-                        MostrarEspacos(button);
-                        MostrarEspacos_y(button);
-                        MostrarEspacos_diagonal(button);
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-            }
-
-            for (j = y; j >= 0; j--)
-            {
-                for (i = x; i >= 0; i--)
-                {
-                    button = "Button" + (i + (9 * j));
-
-                    if (TemBomba(button) == false && BombasVolta(button) == 0)
-                    {
-                        MostrarEspacos(button);
-                        MostrarEspacos_y(button);
-                        MostrarEspacos_diagonal(button);
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-            }
-
-            for (j = y; j >= 0; j--)
-            {
-                for (i = x; i >= 0; i--)
-                {
-                    button = "Button" + (i + (9 * j));
-
-                    if (TemBomba(button) == false && BombasVolta(button) == 0)
-                    {
-                        MostrarEspacos(button);
-                        MostrarEspacos_y(button);
-                        MostrarEspacos_diagonal(button);
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-            }
-
-            for (j = y; j >= 0; j--)
-            {
-                for (i = x; i >= 0; i--)
-                {
-                    button = "Button" + (i + (9 * j));
-
-                    if (TemBomba(button) == false && BombasVolta(button) == 0)
-                    {
-                        MostrarEspacos(button);
-                        MostrarEspacos_y(button);
-                        MostrarEspacos_diagonal(button);
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-            }
-            
-        }
-
         private int y_botao(string botao)
         {
             int y = 0;
 
-            int num_botao =NumBotao(Convert.ToString(botao));
+            int num_botao = NumBotao(Convert.ToString(botao));
 
-            if(num_botao >= 0 && num_botao <= 8)
+            if (num_botao >= 0 && num_botao <= 8)
             {
                 y = 0;
             }
@@ -1114,6 +1075,138 @@ namespace Minesweeper
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private bool Victoria()
+        {
+            int i = 0;
+
+            foreach (Button button in Panel.Controls)
+            {
+                if (button.Image != null || TemBomba(button.Name) == false)
+                {
+                    i++;
+                }
+            }
+
+            if (i == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void PedidoNovoJogo()
+        {
+
+            if (dificuldade == Dificuldade.facil)
+            {
+                novadificuldade = "Facil";
+            }
+            else
+            {
+                novadificuldade = "Medio";
+            }
+
+            //Prepara o pedido ao servidor com o URL adequado
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://prateleira.utad.priv:1234/LPDSW/2019-2020/novo/" + novadificuldade + "/" + id); // ou outro qualquer username
+
+            // Com o acesso usa HTTPS e o servidor usar cerificados autoassinados, tempos de configurar o cliente para aceitar sempre o certificado.
+            ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
+
+            request.Method = "GET"; // método usado para enviar o pedido
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse(); // faz o envio do pedido
+
+            Stream receiveStream = response.GetResponseStream(); // obtem o stream associado à resposta.
+            StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8); // Canaliza o stream para um leitor de stream de nível superior com o formato de codificação necessário.
+            string resultado = readStream.ReadToEnd();
+
+            response.Close();
+            readStream.Close();
+
+            // converte para objeto XML para facilitar a extração da informação e ...
+            XDocument xmlResposta = XDocument.Parse(resultado);
+            // ...interpretar o resultado de acordo com a lógica da aplicação (exemplificativo)
+            if (xmlResposta.Element("resultado").Element("status").Value == "ERRO")
+            {
+                // apresenta mensagem de erro usando o texto (contexto) da resposta
+                MessageBox.Show(xmlResposta.Element("resultado").Element("contexto").Value, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FacilToolStripMenuItem_Click(null, null);
+            }
+            else
+            {
+
+            }
+        }
+
+        private void GuardarJogo()
+        {
+            //Prepara o pedido ao servidor com o URL adequado
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://prateleira.utad.priv:1234/LPDSW/2019-2020/resultado/" + id);
+
+            // Com o acesso usa HTTPS e o servidor usar cerificados autoassinados, temos de configurar o cliente para aceitar sempre o certificado.
+            ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
+
+            // prepara os dados do pedido a partir de uma string só com a estrutura do XML (sem dados)
+            XDocument xmlPedido = XDocument.Parse("<resultado_jogo><nivel></nivel><tempo></tempo><vitoria></vitoria></resultado_jogo>");
+            //preenche os dados no XML
+            xmlPedido.Element("resultado_jogo").Element("nivel").Value = Convert.ToString(novadificuldade);
+            xmlPedido.Element("resultado_jogo").Element("tempo").Value = Convert.ToString(tempo_final);
+
+            string boolvitoria;
+
+            if (vitoria == 0)
+            {
+                boolvitoria = "false";
+            }
+            else
+            {
+                boolvitoria = "true";
+            }
+
+            xmlPedido.Element("resultado_jogo").Element("vitoria").Value = Convert.ToString(boolvitoria);
+
+            string mensagem = xmlPedido.Root.ToString();
+
+            byte[] data = Encoding.Default.GetBytes(mensagem); // note: choose appropriate encoding
+            request.Method = "POST";// método usado para enviar o pedido
+            request.ContentType = "application/xml"; // tipo de dados que é enviado com o pedido
+            request.ContentLength = data.Length; // comprimento dos dados enviado no pedido
+
+            Stream newStream = request.GetRequestStream(); // obtem a referência do stream associado ao pedido...
+            newStream.Write(data, 0, data.Length);// ... que permite escrever os dados a ser enviados ao servidor
+            newStream.Close();
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse(); // faz o envio do pedido
+
+            Stream receiveStream = response.GetResponseStream(); // obtem o stream associado à resposta.
+            StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8); // Canaliza o stream para um leitor de stream de nível superior com o
+                                                                                      //formato de codificação necessário.    
+            string resultado = readStream.ReadToEnd();
+            response.Close();
+            readStream.Close();
+            // converte para objeto XML para facilitar a extração da informação e ...
+            XDocument xmlResposta = XDocument.Parse(resultado);
+            // ...interpretar o resultado de acordo com a lógica da aplicação (exemplificativo)
+            if (xmlResposta.Element("resultado").Element("status").Value == "ERRO")
+            {
+                // apresenta mensagem de erro usando o texto (contexto) da resposta
+                MessageBox.Show(xmlResposta.Element("resultado").Element("contexto").Value, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // assume a autenticação e obtem o ID do resultado...para ser usado noutros pedidos               
+
+            }
+        }
+
+        public bool AcceptAllCertifications(object sender, System.Security.Cryptography.X509Certificates.X509Certificate certification, System.Security.Cryptography.X509Certificates.X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors)
+        {
+            return true;
 
         }
     }

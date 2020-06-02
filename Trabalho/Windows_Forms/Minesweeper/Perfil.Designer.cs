@@ -42,10 +42,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPais = new System.Windows.Forms.TextBox();
-            this.textBoxBestTime = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxWorstTime = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxDJogos = new System.Windows.Forms.TextBox();
+            this.textBoxVJogos = new System.Windows.Forms.TextBox();
+            this.textBoxTFacil = new System.Windows.Forms.TextBox();
+            this.textBoxTMedio = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,48 +179,106 @@
             this.textBoxPais.Size = new System.Drawing.Size(167, 20);
             this.textBoxPais.TabIndex = 31;
             // 
-            // textBoxBestTime
-            // 
-            this.textBoxBestTime.Location = new System.Drawing.Point(128, 303);
-            this.textBoxBestTime.Name = "textBoxBestTime";
-            this.textBoxBestTime.ReadOnly = true;
-            this.textBoxBestTime.Size = new System.Drawing.Size(167, 20);
-            this.textBoxBestTime.TabIndex = 33;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(49, 303);
+            this.label7.Location = new System.Drawing.Point(147, 310);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 32;
-            this.label7.Text = "Best time";
-            // 
-            // textBoxWorstTime
-            // 
-            this.textBoxWorstTime.Location = new System.Drawing.Point(128, 329);
-            this.textBoxWorstTime.Name = "textBoxWorstTime";
-            this.textBoxWorstTime.ReadOnly = true;
-            this.textBoxWorstTime.Size = new System.Drawing.Size(167, 20);
-            this.textBoxWorstTime.TabIndex = 35;
+            this.label7.Text = "Jogos";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(49, 329);
+            this.label9.Location = new System.Drawing.Point(43, 326);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 13);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "Worst time";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Vitórias";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(259, 326);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 13);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "Derrotas";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(125, 363);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(91, 13);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "Melhores Tempos";
+            // 
+            // textBoxDJogos
+            // 
+            this.textBoxDJogos.Location = new System.Drawing.Point(18, 342);
+            this.textBoxDJogos.Name = "textBoxDJogos";
+            this.textBoxDJogos.ReadOnly = true;
+            this.textBoxDJogos.Size = new System.Drawing.Size(86, 20);
+            this.textBoxDJogos.TabIndex = 36;
+            // 
+            // textBoxVJogos
+            // 
+            this.textBoxVJogos.Location = new System.Drawing.Point(240, 342);
+            this.textBoxVJogos.Name = "textBoxVJogos";
+            this.textBoxVJogos.ReadOnly = true;
+            this.textBoxVJogos.Size = new System.Drawing.Size(86, 20);
+            this.textBoxVJogos.TabIndex = 37;
+            // 
+            // textBoxTFacil
+            // 
+            this.textBoxTFacil.Location = new System.Drawing.Point(18, 403);
+            this.textBoxTFacil.Name = "textBoxTFacil";
+            this.textBoxTFacil.ReadOnly = true;
+            this.textBoxTFacil.Size = new System.Drawing.Size(86, 20);
+            this.textBoxTFacil.TabIndex = 38;
+            // 
+            // textBoxTMedio
+            // 
+            this.textBoxTMedio.Location = new System.Drawing.Point(240, 403);
+            this.textBoxTMedio.Name = "textBoxTMedio";
+            this.textBoxTMedio.ReadOnly = true;
+            this.textBoxTMedio.Size = new System.Drawing.Size(86, 20);
+            this.textBoxTMedio.TabIndex = 39;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(49, 387);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(29, 13);
+            this.label12.TabIndex = 40;
+            this.label12.Text = "Fácil";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(266, 387);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 13);
+            this.label13.TabIndex = 41;
+            this.label13.Text = "Médio";
             // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 364);
-            this.Controls.Add(this.textBoxWorstTime);
+            this.ClientSize = new System.Drawing.Size(348, 435);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBoxTMedio);
+            this.Controls.Add(this.textBoxTFacil);
+            this.Controls.Add(this.textBoxVJogos);
+            this.Controls.Add(this.textBoxDJogos);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBoxBestTime);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxPais);
             this.Controls.Add(this.pictureBox1);
@@ -254,9 +318,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPais;
-        private System.Windows.Forms.TextBox textBoxBestTime;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxWorstTime;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxDJogos;
+        private System.Windows.Forms.TextBox textBoxVJogos;
+        private System.Windows.Forms.TextBox textBoxTFacil;
+        private System.Windows.Forms.TextBox textBoxTMedio;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

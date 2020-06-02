@@ -15,7 +15,7 @@ using System.Xml.Linq;
 namespace Minesweeper
 {
     public partial class Inscrever : Form
-    {       
+    {
 
         public Inscrever()
         {
@@ -181,8 +181,6 @@ namespace Minesweeper
             }
         }
 
-   
-
         private string FotoBase64(Image file)
         {
             using (MemoryStream memoryStream = new MemoryStream())
@@ -195,11 +193,9 @@ namespace Minesweeper
 
         }
 
-
-
-
         private string Registo(object sender, EventArgs e)
         {
+
             //CAMPOS NÂO NULOS
             if (string.IsNullOrEmpty(Convert.ToString(textBoxFirstName.Text)) == true && string.IsNullOrEmpty(Convert.ToString(textBoxLastName.Text)) == true)
             {
@@ -216,11 +212,6 @@ namespace Minesweeper
                 MessageBox.Show("Deixou campos em branco!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return "erro";
             }
-            else if (Existe_username(Convert.ToString(textBoxUsername.Text)) == true)
-            {
-                MessageBox.Show("Esse username já existe!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return "erro";
-            }//USERNAME E NOME SO PODEM CONTER UMA PALAVRA
             else if (wordCount(Convert.ToString(textBoxFirstName.Text)) != 1 || wordCount(Convert.ToString(textBoxLastName.Text)) != 1 || wordCount(Convert.ToString(textBoxUsername.Text)) != 1)
             {
                 MessageBox.Show("Deve inserir apenas uma palavra nos 3 primeiros campos!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -268,8 +259,6 @@ namespace Minesweeper
             }
             else
             {
-               
-
                 firstName = Convert.ToString(textBoxFirstName.Text);
                 lastName = Convert.ToString(textBoxLastName.Text);
                 userName = Convert.ToString(textBoxUsername.Text);
@@ -293,8 +282,6 @@ namespace Minesweeper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Registo(null,null);
-
             if (Registo(null, null) == "ok")
             {
                 //Prepara o pedido ao servidor com o URL adequado
@@ -311,7 +298,7 @@ namespace Minesweeper
                 xmlPedido.Element("registo").Element("username").Value = userName;
                 xmlPedido.Element("registo").Element("password").Value = password;
                 xmlPedido.Element("registo").Element("email").Value = email;
-                xmlPedido.Element("registo").Element("fotografia").Value = fotografia;
+                xmlPedido.Element("registo").Element("fotografia").Value = "data:image/png;base64," + fotografia;
                 xmlPedido.Element("registo").Element("pais").Value = pais;
 
                 string mensagem = xmlPedido.Root.ToString();
@@ -337,7 +324,15 @@ namespace Minesweeper
                 XDocument xmlResposta = XDocument.Parse(resultado);
                 // ...interpretar o resultado de acordo com a lógica da aplicação (exemplificativo)
 
-                MessageBox.Show("Registo concluído com sucesso!", "Registo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (xmlResposta.Element("resultado").Element("status").Value == "ERRO")
+                {
+                    // apresenta mensagem de erro usando o texto (contexto) da resposta
+                    MessageBox.Show(xmlResposta.Element("resultado").Element("contexto").Value, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Registo concluído com sucesso!", "Registo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -372,17 +367,17 @@ namespace Minesweeper
             {
                 MessageBox.Show("Erro", "ERRO", MessageBoxButtons.OK);
             }
-                
+
         }
 
         private void comboBoxPais_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-           
+
         }
     }
 }
