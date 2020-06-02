@@ -956,3 +956,4 @@ E:\trabalho\Trabalho\UWP\trabalho\obj\x86\Debug\qualifiers.txt.intermediate
 E:\trabalho\Trabalho\UWP\trabalho\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 E:\trabalho\Trabalho\UWP\trabalho\obj\x86\Debug\ProjectArchitectures.txt
 E:\trabalho\Trabalho\UWP\trabalho\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758552200000000.json
+E:\trabalho\Trabalho\UWP\trabalho\obj\x86\Debug\uwp.csprojAssemblyReference.cache

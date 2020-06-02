@@ -105,7 +105,7 @@ namespace login
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame view = new Frame();
+           Frame view = new Frame();
             this.Frame.Navigate(typeof(jogo.MainPage));
 
             //Prepara o pedido ao servidor com o URL adequado
