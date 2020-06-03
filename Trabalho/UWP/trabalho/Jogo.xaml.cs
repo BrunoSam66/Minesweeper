@@ -43,6 +43,8 @@ namespace jogo
         private int quantidade_botoes;
         private int botoes_linha;
 
+        string botao;
+
         private int time = 0;
         private bool isActive = false;
         private object rootPage;
@@ -99,9 +101,11 @@ namespace jogo
 
         }
 
-        private async System.Threading.Tasks.Task bunton_clickAsync(object sender, PointerRoutedEventArgs e)
+        private void Button_CLick(object sender, PointerRoutedEventArgs e)
         {
             Button button = sender as Button;
+            botao = button.Name;
+
             isActive = true;
             ///.----------------falta o cod para depois do button ser clicado 
             ///
@@ -110,24 +114,15 @@ namespace jogo
             PointerPointProperties props = currentPoint.Properties;
             if (!props.IsRightButtonPressed)
             {
-                BotaoClicado = button.Name;
 
                 if (TemBomba(BotaoClicado) == true)
                 {
                     //Abrir a bomba no button
-                   x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/bomba.png", UriKind.RelativeOrAbsolute));
-                    Thickness margin = new Thickness(1, 1, 1, 1);
-                    button.Margin = margin;
-                   
+                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/bomba.png")), Stretch = Stretch.None };
+
                     button.IsEnabled = false;
 
-                    var image = new Image();
-                    image.Source = x;
-                    // button.Content = image;
-                    ((Image)button.Content).Source = x;
-                    //  button.Background =
-                    button.Height = 26;
-                    button.Width = 26;
+
                     ResetTime();
                     isActive = false;
 
@@ -138,7 +133,6 @@ namespace jogo
                         PrimaryButtonText = "OK"
 
                     };
-                    await dialog.ShowAsync();
 
                     if (dificuldade == Dificuldade.facil)
                     {
@@ -151,149 +145,77 @@ namespace jogo
                 }
                 else if (BombasVolta(BotaoClicado) == 1)
                 {
-                    //img1
-                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/1.png", UriKind.RelativeOrAbsolute));
-                    Thickness margin = new Thickness(1, 1, 1, 1);
-                    button.Margin = margin;
-                  
+                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/1.png")), Stretch = Stretch.None };
+
                     button.IsEnabled = false;
 
-                    var image = new Image();
-                    image.Source = x;
-                    // button.Content = image;
-                    ((Image)button.Content).Source = x;
-                    button.Width = 26;
-                    button.Height = 26;
+
                 }
                 else if (BombasVolta(BotaoClicado) == 2)
                 {
                     //img2
-                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/2.png", UriKind.RelativeOrAbsolute));
-                    Thickness margin = new Thickness(1, 1, 1, 1);
-                    button.Margin = margin;
-                   
+                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/2.png")), Stretch = Stretch.None };
+
                     button.IsEnabled = false;
 
-                    var image = new Image();
-                    image.Source = x;
-                    // button.Content = image;
-                    ((Image)button.Content).Source = x;
-                    button.Width = 26;
-                    button.Height = 26;
+
                 }
                 else if (BombasVolta(BotaoClicado) == 3)
                 {
                     /// im3
-                     x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/3.png", UriKind.RelativeOrAbsolute));
-                    Thickness margin = new Thickness(1, 1, 1, 1);
-                    button.Margin = margin;
-                    
+                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/3.png")), Stretch = Stretch.None };
+
                     button.IsEnabled = false;
 
-                    var image = new Image();
-                    image.Source = x;
-                    // button.Content = image;
-                    ((Image)button.Content).Source = x;
-                    button.Width = 26;
-                    button.Height = 26;
+
                 }
                 else if (BombasVolta(BotaoClicado) == 4)
                 {
                     //   im4 
-                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/4.png", UriKind.RelativeOrAbsolute));
-                    Thickness margin = new Thickness(1, 1, 1, 1);
-                    button.Margin = margin;
-                   
+                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/4.png")), Stretch = Stretch.None };
+
                     button.IsEnabled = false;
 
-                    var image = new Image();
-                    image.Source = x;
-                    // button.Content = image;
-                    ((Image)button.Content).Source = x;
-                    button.Width = 26;
-                    button.Height = 26;
                 }
                 else if (BombasVolta(BotaoClicado) == 5)
                 {
                     //Abrir imagem 5
-                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/5.png", UriKind.RelativeOrAbsolute));
-                    Thickness margin = new Thickness(1, 1, 1, 1);
-                    button.Margin = margin;
-                   
+                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/5.png")), Stretch = Stretch.None };
+
                     button.IsEnabled = false;
 
-                    var image = new Image();
-                    image.Source = x;
-                    // button.Content = image;
-                    ((Image)button.Content).Source = x;
-                    button.Width = 26;
-                    button.Height = 26;
                 }
                 else if (BombasVolta(BotaoClicado) == 6)
                 {
                     //Abrir imagem 6.png no button
-                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/6.png", UriKind.RelativeOrAbsolute));
-                    Thickness margin = new Thickness(1, 1, 1, 1);
-                    button.Margin = margin;
-                   
+                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/6.png")), Stretch = Stretch.None };
+
                     button.IsEnabled = false;
 
-                    var image = new Image();
-                    image.Source = x;
-                    // button.Content = image;
-                    ((Image)button.Content).Source = x;
-                    button.Width = 26;
-                    button.Height = 26;
                 }
                 else if (BombasVolta(BotaoClicado) == 7)
                 {
                     //AAbrir imagem 7.png no button
-                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/7.png", UriKind.RelativeOrAbsolute));
-                    Thickness margin = new Thickness(1, 1, 1, 1);
-                    button.Margin = margin;
-                 
+                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/7.png")), Stretch = Stretch.None };
+
                     button.IsEnabled = false;
 
-                    var image = new Image();
-                    image.Source = x;
-                    // button.Content = image;
-                    ((Image)button.Content).Source = x;
-                  
-                    button.Width = 26;
-                    button.Height = 26;
+
                 }
                 else if (BombasVolta(BotaoClicado) == 8)
                 {
                     //Abrir imagem 8.png no button
-                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/8.png", UriKind.RelativeOrAbsolute));
-                    Thickness margin = new Thickness(1, 1, 1, 1);
-                    button.Margin = margin;
-                
+                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/8.png")), Stretch = Stretch.None };
+
                     button.IsEnabled = false;
 
-                    var image = new Image();
-                    image.Source = x;
-                    // button.Content = image;
-                    ((Image)button.Content).Source = x;
-                
-                    button.Width = 26;
-                    button.Height = 26;
                 }
                 else
                 {
                     //abrir imagem 0.png no button
-                    x = new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/0.png", UriKind.RelativeOrAbsolute));
-                    Thickness margin = new Thickness(1, 1, 1, 1);
-                    button.Margin = margin;
-            
-                    button.IsEnabled = false;
+                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/0.png")), Stretch = Stretch.None };
 
-                    var image = new Image();
-                    image.Source = x;
-                    // button.Content = image;
-                    ((Image)button.Content).Source = x;
-                    button.Width = 26;
-                    button.Height = 26;
+                    button.IsEnabled = false;
                     
                     //MostrarTudo(BotaoClicado);
                     MostrarEspacos(BotaoClicado);
@@ -308,21 +230,10 @@ namespace jogo
 
                 //mostrar a imagem da bandeira no button
 
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/bandeira.png")), Stretch = Stretch.None };
 
-                x= new BitmapImage(new Uri("ms-appx:/MyAssembly/Assets/bandeira.png", UriKind.RelativeOrAbsolute));
-
-                Thickness margin = new Thickness(1, 1, 1, 1);
-                    button.Margin = margin;
-              
                 button.IsEnabled = false;
 
-                var image = new Image();
-                image.Source = x;
-                // button.Content = image;
-                ((Image)button.Content).Source = x;
-
-                button.Width = 26;
-                button.Height = 26;
             }
         
 
@@ -1103,6 +1014,11 @@ namespace jogo
         }
 
         private void Button40_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
