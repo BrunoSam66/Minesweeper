@@ -155,6 +155,7 @@ namespace login
             PrimaryButtonText="OK"
             };
             await dialog.ShowAsync();*/
+            /*
             button1.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
             //Prepara o pedido ao servidor com o URL adequado
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://prateleira.utad.priv:1234/LPDSW/2019-2020/Autentica");
@@ -206,8 +207,10 @@ namespace login
                 mostrarjogo.Show();
                 //MessageBox.Show(xmlResposta.Element("resultado").Element("objeto").Element("ID").Value, "Entrou", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
+            */
+            Frame view = new Frame();
+            this.Frame.Navigate(typeof(jogo.MainPage));
         }
-        
+
     }
 }

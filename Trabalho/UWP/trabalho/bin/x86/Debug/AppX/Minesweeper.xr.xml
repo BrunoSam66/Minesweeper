@@ -38,7 +38,6 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="RenderTransformOrigin" />
-      <RootProperty Name="FontSize" />
       <RootProperty Name="Flyout" />
       <RootEvent Name="Click" />
     </RootType>

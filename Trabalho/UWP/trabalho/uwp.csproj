@@ -183,11 +183,6 @@
   <ItemGroup>
     <Folder Include="System\Net\Security\" />
   </ItemGroup>
-  <ItemGroup>
-    <SDKReference Include="WindowsTeam, Version=10.0.17763.0">
-      <Name>Windows Team Extensions for the UWP</Name>
-    </SDKReference>
-  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
