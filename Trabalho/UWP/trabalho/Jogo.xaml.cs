@@ -101,18 +101,17 @@ namespace jogo
 
         }
 
-        private void Button_CLick(object sender, PointerRoutedEventArgs e)
+        private async void Button_Click(object sender, PointerRoutedEventArgs e)
         {
             Button button = sender as Button;
             botao = button.Name;
 
             isActive = true;
-            ///.----------------falta o cod para depois do button ser clicado 
-            ///
-            BitmapImage x = new BitmapImage();
+
             PointerPoint currentPoint = e.GetCurrentPoint(null);
             PointerPointProperties props = currentPoint.Properties;
-            if (!props.IsRightButtonPressed)
+
+            if (props.IsLeftButtonPressed)
             {
 
                 if (TemBomba(BotaoClicado) == true)
@@ -133,6 +132,7 @@ namespace jogo
                         PrimaryButtonText = "OK"
 
                     };
+                    await dialog.ShowAsync();
 
                     if (dificuldade == Dificuldade.facil)
                     {
@@ -224,7 +224,7 @@ namespace jogo
 
                 }
             }
-            else if (props.IsRightButtonPressed )// falta verificar se ainda não foi clicado && button.Image == default(Image))
+            else if (props.IsRightButtonPressed)// falta verificar se ainda não foi clicado && button.Image == default(Image))
             {
                 BotaoClicado = button.Name;
 
@@ -239,8 +239,8 @@ namespace jogo
 
         }
 
-             private void GerarMinas(int[] mines1)
-              {
+        private void GerarMinas(int[] mines1)
+        {
             int i;
 
             int random;
@@ -1008,19 +1008,5 @@ namespace jogo
             this.Frame.Navigate(typeof(perfil.MainPage));
         }
 
-        private void Button20_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button40_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

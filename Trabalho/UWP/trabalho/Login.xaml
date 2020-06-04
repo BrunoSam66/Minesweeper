@@ -10,8 +10,8 @@
 
     <Grid>
 
-        <TextBox x:Name="user_text_box" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,256,0,0" Width="188" TextChanged="TextBox_TextChanged"/>
-        <TextBox x:Name="pass_text_box" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,341,0,0" Width="188" TextChanged="TextBox_TextChanged_1"/>
+        <TextBox x:Name="UserTextBox" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,256,0,0" Width="188" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="PassTextBox" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,341,0,0" Width="188" TextChanged="TextBox_TextChanged_1"/>
         <TextBlock HorizontalAlignment="Left" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Margin="195,263,0,0" RenderTransformOrigin="0.468,1.316"/>
         <TextBlock HorizontalAlignment="Left" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Margin="195,348,0,0" RenderTransformOrigin="1.138,0.368"/>
         <Button x:Name="button1" Content="Entrar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="320,433,0,0" Width="111" Click="Button_Click"/>
