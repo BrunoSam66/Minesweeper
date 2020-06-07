@@ -101,14 +101,16 @@ namespace jogo
 
         }
 
-        private async void Button_Click(object sender, PointerRoutedEventArgs e)
+        public delegate void EventHandler(object sender, RoutedEventArgs e);
+
+        private void Button_Click(object sender, PointerRoutedEventArgs f)
         {
             Button button = sender as Button;
             botao = button.Name;
 
             isActive = true;
 
-            PointerPoint currentPoint = e.GetCurrentPoint(null);
+            PointerPoint currentPoint = f.GetCurrentPoint(null);
             PointerPointProperties props = currentPoint.Properties;
 
             if (props.IsLeftButtonPressed)
@@ -125,6 +127,7 @@ namespace jogo
                     ResetTime();
                     isActive = false;
 
+                    /*
                     ContentDialog dialog = new ContentDialog()
                     {
                         Title = "Game Over!!!",
@@ -132,7 +135,7 @@ namespace jogo
                         PrimaryButtonText = "OK"
 
                     };
-                    await dialog.ShowAsync();
+                    await dialog.ShowAsync();*/
 
                     if (dificuldade == Dificuldade.facil)
                     {

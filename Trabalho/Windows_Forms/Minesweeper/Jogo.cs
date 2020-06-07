@@ -481,6 +481,8 @@ namespace Minesweeper
                 botoes_linha = 16;
                 quantidade_botoes = 256;
             }
+
+            textBoxBombas.Text = "Bombas: " + Convert.ToString(bombas);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -1070,7 +1072,8 @@ namespace Minesweeper
 
         private void top10ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Program.V_Top10.Show();
+            Top10 top = new Top10(ModoDeJogo);
+            top.Show();
         }
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)

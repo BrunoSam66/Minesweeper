@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Jogo));
-            this.textBoxPontos = new System.Windows.Forms.TextBox();
+            this.textBoxBombas = new System.Windows.Forms.TextBox();
             this.Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -44,14 +44,14 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBoxPontos
+            // textBoxBombas
             // 
-            this.textBoxPontos.Location = new System.Drawing.Point(12, 34);
-            this.textBoxPontos.Name = "textBoxPontos";
-            this.textBoxPontos.ReadOnly = true;
-            this.textBoxPontos.Size = new System.Drawing.Size(77, 20);
-            this.textBoxPontos.TabIndex = 0;
-            this.textBoxPontos.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxBombas.Location = new System.Drawing.Point(12, 34);
+            this.textBoxBombas.Name = "textBoxBombas";
+            this.textBoxBombas.ReadOnly = true;
+            this.textBoxBombas.Size = new System.Drawing.Size(77, 20);
+            this.textBoxBombas.TabIndex = 0;
+            this.textBoxBombas.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Panel
             // 
@@ -117,21 +117,21 @@
             // perfilToolStripMenuItem1
             // 
             this.perfilToolStripMenuItem1.Name = "perfilToolStripMenuItem1";
-            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
             this.perfilToolStripMenuItem1.Text = "Perfil";
             this.perfilToolStripMenuItem1.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
             // 
             // modoDeJogoToolStripMenuItem
             // 
             this.modoDeJogoToolStripMenuItem.Name = "modoDeJogoToolStripMenuItem";
-            this.modoDeJogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modoDeJogoToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.modoDeJogoToolStripMenuItem.Text = "Fácil";
             this.modoDeJogoToolStripMenuItem.Click += new System.EventHandler(this.FacilToolStripMenuItem_Click);
             // 
             // fácilToolStripMenuItem1
             // 
             this.fácilToolStripMenuItem1.Name = "fácilToolStripMenuItem1";
-            this.fácilToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.fácilToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
             this.fácilToolStripMenuItem1.Text = "Médio";
             this.fácilToolStripMenuItem1.Click += new System.EventHandler(this.MedioToolStripMenuItem1_Click);
             // 
@@ -150,7 +150,7 @@
             this.Controls.Add(this.textBoxTime);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Panel);
-            this.Controls.Add(this.textBoxPontos);
+            this.Controls.Add(this.textBoxBombas);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -166,7 +166,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxPontos;
+        private System.Windows.Forms.TextBox textBoxBombas;
         private System.Windows.Forms.FlowLayoutPanel Panel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer1;
