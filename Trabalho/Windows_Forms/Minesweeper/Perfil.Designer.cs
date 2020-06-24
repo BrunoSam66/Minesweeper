@@ -46,8 +46,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBoxDJogos = new System.Windows.Forms.TextBox();
             this.textBoxVJogos = new System.Windows.Forms.TextBox();
+            this.textBoxDJogos = new System.Windows.Forms.TextBox();
             this.textBoxTFacil = new System.Windows.Forms.TextBox();
             this.textBoxTMedio = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -215,21 +215,21 @@
             this.label11.TabIndex = 35;
             this.label11.Text = "Melhores Tempos";
             // 
-            // textBoxDJogos
-            // 
-            this.textBoxDJogos.Location = new System.Drawing.Point(18, 342);
-            this.textBoxDJogos.Name = "textBoxDJogos";
-            this.textBoxDJogos.ReadOnly = true;
-            this.textBoxDJogos.Size = new System.Drawing.Size(86, 20);
-            this.textBoxDJogos.TabIndex = 36;
-            // 
             // textBoxVJogos
             // 
-            this.textBoxVJogos.Location = new System.Drawing.Point(240, 342);
+            this.textBoxVJogos.Location = new System.Drawing.Point(18, 342);
             this.textBoxVJogos.Name = "textBoxVJogos";
             this.textBoxVJogos.ReadOnly = true;
             this.textBoxVJogos.Size = new System.Drawing.Size(86, 20);
-            this.textBoxVJogos.TabIndex = 37;
+            this.textBoxVJogos.TabIndex = 36;
+            // 
+            // textBoxDJogos
+            // 
+            this.textBoxDJogos.Location = new System.Drawing.Point(240, 342);
+            this.textBoxDJogos.Name = "textBoxDJogos";
+            this.textBoxDJogos.ReadOnly = true;
+            this.textBoxDJogos.Size = new System.Drawing.Size(86, 20);
+            this.textBoxDJogos.TabIndex = 37;
             // 
             // textBoxTFacil
             // 
@@ -274,8 +274,8 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBoxTMedio);
             this.Controls.Add(this.textBoxTFacil);
-            this.Controls.Add(this.textBoxVJogos);
             this.Controls.Add(this.textBoxDJogos);
+            this.Controls.Add(this.textBoxVJogos);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -322,8 +322,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxDJogos;
         private System.Windows.Forms.TextBox textBoxVJogos;
+        private System.Windows.Forms.TextBox textBoxDJogos;
         private System.Windows.Forms.TextBox textBoxTFacil;
         private System.Windows.Forms.TextBox textBoxTMedio;
         private System.Windows.Forms.Label label12;

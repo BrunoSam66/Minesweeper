@@ -16,15 +16,15 @@
         <TextBlock x:ConnectionId='3' HorizontalAlignment="Left" Text="Email " TextWrapping="Wrap" VerticalAlignment="Top" Margin="245,328,0,0"                                                />
         <TextBlock x:ConnectionId='4' HorizontalAlignment="Left" Text="País" TextWrapping="Wrap" VerticalAlignment="Top" Margin="245,386,0,0"                                                />
         <TextBlock HorizontalAlignment="Left" Text="Fotografia" TextWrapping="Wrap" VerticalAlignment="Top" Margin="245,446,0,0"/>
-        <TextBox x:ConnectionId='5' HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,75,0,0" Width="200"                                    />
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,142,0,0" Width="200"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,202,0,0" Width="200"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,264,0,0" Width="200"/>
-        <TextBox x:ConnectionId='6' HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,321,0,0" Width="200"                                  />
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="368,379,0,0" Width="200"/>
-        <Button Content="Upload" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,440,0,0"/>
-        <Button x:ConnectionId='7' Content="Registar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="401,558,0,0"                     />
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="468,446,0,0" Source="/Assets/id.png"/>
+        <TextBox x:ConnectionId='5' HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,75,0,0" Width="200"                                     Name="textBoxFirstName"/>
+        <TextBox x:ConnectionId='6' HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,142,0,0" Width="200" Name="textBoxLastName"/>
+        <TextBox x:ConnectionId='7' HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,202,0,0" Width="200" Name = "textBoxUsername"/>
+        <TextBox x:ConnectionId='8' HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,264,0,0" Width="200" Name = "textBoxPassword"/>
+        <TextBox x:ConnectionId='9' HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,321,0,0" Width="200"                                   Name="textBoxEmail"/>
+        <ComboBox x:ConnectionId='10' HorizontalAlignment="Left" VerticalAlignment="Top" Margin="368,379,0,0" Width="200" Name ="comboBoxPais"/>
+        <Button x:ConnectionId='11' Content="Upload" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,440,0,0"                       />
+        <Button x:ConnectionId='12' Content="Registar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="401,558,0,0"                     />
+        <Image x:ConnectionId='13' HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="468,446,0,0" Source="/Assets/id.png" Name ="pictureBox1"/>
 
     </Grid>
 </Page>

@@ -16,15 +16,15 @@
         <TextBlock HorizontalAlignment="Left" Text="Email " TextWrapping="Wrap" VerticalAlignment="Top" Margin="245,328,0,0" SelectionChanged="TextBlock_SelectionChanged_1"/>
         <TextBlock HorizontalAlignment="Left" Text="País" TextWrapping="Wrap" VerticalAlignment="Top" Margin="245,386,0,0" SelectionChanged="TextBlock_SelectionChanged_2"/>
         <TextBlock HorizontalAlignment="Left" Text="Fotografia" TextWrapping="Wrap" VerticalAlignment="Top" Margin="245,446,0,0"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,75,0,0" Width="200" TextChanged="TextBox_TextChanged_1"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,142,0,0" Width="200"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,202,0,0" Width="200"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,264,0,0" Width="200"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,321,0,0" Width="200" TextChanged="TextBox_TextChanged"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="368,379,0,0" Width="200"/>
-        <Button Content="Upload" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,440,0,0"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,75,0,0" Width="200" TextChanged="TextBox_TextChanged_1" Name="textBoxFirstName"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,142,0,0" Width="200" Name="textBoxLastName"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,202,0,0" Width="200" Name = "textBoxUsername"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,264,0,0" Width="200" Name = "textBoxPassword"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="368,321,0,0" Width="200" TextChanged="TextBox_TextChanged" Name="textBoxEmail"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="368,379,0,0" Width="200" Name ="comboBoxPais"/>
+        <Button Content="Upload" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,440,0,0" Click="Button_Click_1"/>
         <Button Content="Registar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="401,558,0,0" Click="Button_Click"/>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="468,446,0,0" Source="/Assets/id.png"/>
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="468,446,0,0" Source="/Assets/id.png" Name ="pictureBox1"/>
 
     </Grid>
 </Page>

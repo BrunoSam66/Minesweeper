@@ -11,3 +11,15 @@ C:\Users\crist\Source\Repos\campominas4\Trabalho\Windows_Forms\Minesweeper\obj\D
 C:\Users\crist\Source\Repos\campominas4\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Windows Forms.csproj.CoreCompileInputs.cache
 C:\Users\crist\Source\Repos\campominas4\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.exe
 C:\Users\crist\Source\Repos\campominas4\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.pdb
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\bin\Debug\Minesweeper.exe.config
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\bin\Debug\Minesweeper.exe
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\bin\Debug\Minesweeper.pdb
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.Inscrever.resources
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.Jogo.resources
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.Login.resources
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.Perfil.resources
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.Top10.resources
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Windows Forms.csproj.GenerateResource.cache
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Windows Forms.csproj.CoreCompileInputs.cache
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.exe
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.pdb

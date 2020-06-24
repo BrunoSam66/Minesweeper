@@ -73,67 +73,70 @@ namespace Minesweeper
             {
                 //facil
 
-                labelf1.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Element("jogador").Attribute("username").Value;        
-                textBoxf1.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Element("jogador").Attribute("tempo").Value;
+                if (ModoDeJogo == "online")
+                {
+                    labelf1.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Element("jogador").Attribute("username").Value;
+                    textBoxf1.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Element("jogador").Attribute("tempo").Value;
 
-                labelf2.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(1).Attribute("username").Value;
-                textBoxf2.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(1).Attribute("tempo").Value;
+                    labelf2.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(1).Attribute("username").Value;
+                    textBoxf2.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(1).Attribute("tempo").Value;
 
-                labelf3.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(2).Attribute("username").Value;
-                textBoxf3.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(2).Attribute("tempo").Value;
+                    labelf3.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(2).Attribute("username").Value;
+                    textBoxf3.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(2).Attribute("tempo").Value;
 
-                labelf4.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(3).Attribute("username").Value;
-                textBoxf4.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(3).Attribute("tempo").Value;
+                    labelf4.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(3).Attribute("username").Value;
+                    textBoxf4.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(3).Attribute("tempo").Value;
 
-                labelf5.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(4).Attribute("username").Value;
-                textBoxf5.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(4).Attribute("tempo").Value;
+                    labelf5.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(4).Attribute("username").Value;
+                    textBoxf5.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(4).Attribute("tempo").Value;
 
-                labelf6.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(5).Attribute("username").Value;
-                textBoxf6.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(5).Attribute("tempo").Value;
+                    labelf6.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(5).Attribute("username").Value;
+                    textBoxf6.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(5).Attribute("tempo").Value;
 
-                labelf7.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(6).Attribute("username").Value;
-                textBoxf7.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(6).Attribute("tempo").Value;
+                    labelf7.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(6).Attribute("username").Value;
+                    textBoxf7.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(6).Attribute("tempo").Value;
 
-                labelf8.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(7).Attribute("username").Value;
-                textBoxf8.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(7).Attribute("tempo").Value;
+                    labelf8.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(7).Attribute("username").Value;
+                    textBoxf8.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(7).Attribute("tempo").Value;
 
-                labelf9.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(8).Attribute("username").Value;
-                textBoxf9.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(8).Attribute("tempo").Value;
+                    labelf9.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(8).Attribute("username").Value;
+                    textBoxf9.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(8).Attribute("tempo").Value;
 
-                labelf10.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(9).Attribute("username").Value;
-                textBoxf10.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(9).Attribute("tempo").Value;
+                    labelf10.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(9).Attribute("username").Value;
+                    textBoxf10.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").Elements("jogador").ElementAt(9).Attribute("tempo").Value;
 
-                //medio 
+                    //medio 
 
-                labelm1.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(0).Attribute("username").Value;
-                textBoxm1.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(0).Attribute("tempo").Value;
+                    labelm1.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(0).Attribute("username").Value;
+                    textBoxm1.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(0).Attribute("tempo").Value;
 
-                labelm2.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(1).Attribute("username").Value;
-                textBoxm2.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(1).Attribute("tempo").Value;
+                    labelm2.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(1).Attribute("username").Value;
+                    textBoxm2.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(1).Attribute("tempo").Value;
 
-                labelm3.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(2).Attribute("username").Value;
-                textBoxm3.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(2).Attribute("tempo").Value;
+                    labelm3.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(2).Attribute("username").Value;
+                    textBoxm3.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(2).Attribute("tempo").Value;
 
-                labelm4.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(3).Attribute("username").Value;
-                textBoxm4.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(3).Attribute("tempo").Value;
+                    labelm4.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(3).Attribute("username").Value;
+                    textBoxm4.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(3).Attribute("tempo").Value;
 
-                labelm5.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(4).Attribute("username").Value;
-                textBoxm5.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(4).Attribute("tempo").Value;
+                    labelm5.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(4).Attribute("username").Value;
+                    textBoxm5.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(4).Attribute("tempo").Value;
 
-                labelm6.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(5).Attribute("username").Value;
-                textBoxm6.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(5).Attribute("tempo").Value;
-                
-                labelm7.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(6).Attribute("username").Value;
-                textBoxm7.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(6).Attribute("tempo").Value;
-                /*
-                labelm8.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(7).Attribute("username").Value;
-                textBoxm8.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(7).Attribute("tempo").Value;
+                    labelm6.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(5).Attribute("username").Value;
+                    textBoxm6.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(5).Attribute("tempo").Value;
 
-                labelm9.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(8).Attribute("username").Value;
-                textBoxm9.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(8).Attribute("tempo").Value;
+                    labelm7.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(6).Attribute("username").Value;
+                    textBoxm7.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(6).Attribute("tempo").Value;
 
-                labelm10.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(9).Attribute("username").Value;
-                textBoxm10.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(9).Attribute("tempo").Value;*/
+                    labelm8.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(7).Attribute("username").Value;
+                    textBoxm8.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(7).Attribute("tempo").Value;
+
+                    labelm9.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(8).Attribute("username").Value;
+                    textBoxm9.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(8).Attribute("tempo").Value;
+
+                    labelm10.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(9).Attribute("username").Value;
+                    textBoxm10.Text = xmlResposta.Element("resultado").Element("objeto").Element("top").Element("nivel").ElementsAfterSelf("nivel").Elements("jogador").ElementAt(9).Attribute("tempo").Value;
+                }
             }
         }
 

@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Text;
+using System.Windows.Forms;
 using System.Xml.Linq;
-
 
 namespace Minesweeper
 {
@@ -189,8 +184,6 @@ namespace Minesweeper
                 byte[] imageBytes = memoryStream.ToArray();
                 return Convert.ToBase64String(imageBytes);
             }
-
-
         }
 
         private string Registo(object sender, EventArgs e)

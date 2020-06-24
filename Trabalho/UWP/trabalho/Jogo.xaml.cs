@@ -28,8 +28,17 @@ namespace jogo
         public MainPage()
         {
             this.InitializeComponent();
-        }
 
+            if (dificuldade == Dificuldade.facil)
+            {
+                GerarMinas(mines1);
+
+            }
+            /*else
+            {
+                GerarMinas(mines2);
+            }*/
+        }
 
         private enum Dificuldade { facil, medio }
         private Dificuldade dificuldade = Dificuldade.facil;
@@ -101,145 +110,135 @@ namespace jogo
 
         }
 
-        public delegate void EventHandler(object sender, RoutedEventArgs e);
-
-        private void Button_Click(object sender, PointerRoutedEventArgs f)
+        private void Right_Click(object sender, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e)
         {
             Button button = sender as Button;
+            button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            /*ContentDialog dialog = new ContentDialog()
+            {
+                Title = "Game Over!!!",
+                Content = "Try again!!!",
+                PrimaryButtonText = "OK"
+
+            };
+            await dialog.ShowAsync();*/
+
+            Button button = (Button)sender;
             botao = button.Name;
+            BotaoClicado = button.Name;
 
             isActive = true;
 
-            PointerPoint currentPoint = f.GetCurrentPoint(null);
-            PointerPointProperties props = currentPoint.Properties;
-
-            if (props.IsLeftButtonPressed)
+            if (TemBomba(BotaoClicado) == true)
             {
+                //Abrir a bomba no button
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
-                if (TemBomba(BotaoClicado) == true)
+                button.IsEnabled = false;
+
+                ResetTime();
+                isActive = false;
+
+                /*ContentDialog dialog = new ContentDialog()
                 {
-                    //Abrir a bomba no button
-                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/bomba.png")), Stretch = Stretch.None };
+                    Title = "Game Over!!!",
+                    Content = "Try again!!!",
+                    PrimaryButtonText = "OK"
 
-                    button.IsEnabled = false;
+                };
+                await dialog.ShowAsync();*/
 
-
-                    ResetTime();
-                    isActive = false;
-
-                    /*
-                    ContentDialog dialog = new ContentDialog()
-                    {
-                        Title = "Game Over!!!",
-                        Content = "Try again!!!",
-                        PrimaryButtonText = "OK"
-
-                    };
-                    await dialog.ShowAsync();*/
-
-                    if (dificuldade == Dificuldade.facil)
-                    {
-                        FacilToolStripMenuItem_Click(null, null);
-                    }
-                    else
-                    {
-                        MedioToolStripMenuItem1_Click(null, null);
-                    }
-                }
-                else if (BombasVolta(BotaoClicado) == 1)
+                /*if (dificuldade == Dificuldade.facil)
                 {
-                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/1.png")), Stretch = Stretch.None };
-
-                    button.IsEnabled = false;
-
-
-                }
-                else if (BombasVolta(BotaoClicado) == 2)
-                {
-                    //img2
-                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/2.png")), Stretch = Stretch.None };
-
-                    button.IsEnabled = false;
-
-
-                }
-                else if (BombasVolta(BotaoClicado) == 3)
-                {
-                    /// im3
-                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/3.png")), Stretch = Stretch.None };
-
-                    button.IsEnabled = false;
-
-
-                }
-                else if (BombasVolta(BotaoClicado) == 4)
-                {
-                    //   im4 
-                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/4.png")), Stretch = Stretch.None };
-
-                    button.IsEnabled = false;
-
-                }
-                else if (BombasVolta(BotaoClicado) == 5)
-                {
-                    //Abrir imagem 5
-                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/5.png")), Stretch = Stretch.None };
-
-                    button.IsEnabled = false;
-
-                }
-                else if (BombasVolta(BotaoClicado) == 6)
-                {
-                    //Abrir imagem 6.png no button
-                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/6.png")), Stretch = Stretch.None };
-
-                    button.IsEnabled = false;
-
-                }
-                else if (BombasVolta(BotaoClicado) == 7)
-                {
-                    //AAbrir imagem 7.png no button
-                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/7.png")), Stretch = Stretch.None };
-
-                    button.IsEnabled = false;
-
-
-                }
-                else if (BombasVolta(BotaoClicado) == 8)
-                {
-                    //Abrir imagem 8.png no button
-                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/8.png")), Stretch = Stretch.None };
-
-                    button.IsEnabled = false;
-
+                    FacilToolStripMenuItem_Click(null, null);
                 }
                 else
                 {
-                    //abrir imagem 0.png no button
-                    button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/0.png")), Stretch = Stretch.None };
-
-                    button.IsEnabled = false;
-                    
-                    //MostrarTudo(BotaoClicado);
-                    MostrarEspacos(BotaoClicado);
-                    MostrarEspacos_y(BotaoClicado);
-                    MostrarEspacos_diagonal(BotaoClicado);
-
-                }
+                    MedioToolStripMenuItem1_Click(null, null);
+                }*/
             }
-            else if (props.IsRightButtonPressed)// falta verificar se ainda não foi clicado && button.Image == default(Image))
+            else if (BombasVolta(BotaoClicado) == 1)
             {
-                BotaoClicado = button.Name;
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
-                //mostrar a imagem da bandeira no button
+                button.IsEnabled = false;
 
-                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/bandeira.png")), Stretch = Stretch.None };
+
+            }
+            else if (BombasVolta(BotaoClicado) == 2)
+            {
+                //img2
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
                 button.IsEnabled = false;
 
             }
-        
+            else if (BombasVolta(BotaoClicado) == 3)
+            {
+                /// im3
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
+                button.IsEnabled = false;
+
+            }
+            else if (BombasVolta(BotaoClicado) == 4)
+            {
+                //   im4 
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
+
+                button.IsEnabled = false;
+
+            }
+            else if (BombasVolta(BotaoClicado) == 5)
+            {
+                //Abrir imagem 5
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
+
+                button.IsEnabled = false;
+
+            }
+            else if (BombasVolta(BotaoClicado) == 6)
+            {
+                //Abrir imagem 6.png no button
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
+
+                button.IsEnabled = false;
+
+            }
+            else if (BombasVolta(BotaoClicado) == 7)
+            {
+                //AAbrir imagem 7.png no button
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
+
+                button.IsEnabled = false;
+
+
+            }
+            else if (BombasVolta(BotaoClicado) == 8)
+            {
+                //Abrir imagem 8.png no button
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
+
+                button.IsEnabled = false;
+
+            }
+            else
+            {
+                //abrir imagem 0.png no button
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
+
+                button.IsEnabled = false;
+
+                /*
+                //MostrarTudo(BotaoClicado);
+                MostrarEspacos(BotaoClicado);
+                MostrarEspacos_y(BotaoClicado);
+                MostrarEspacos_diagonal(BotaoClicado);*/
+            }
         }
 
         private void GerarMinas(int[] mines1)
