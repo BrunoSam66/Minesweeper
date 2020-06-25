@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="Minesweeper.Top10"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Minesweeper"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="215,102,0,0" Width="112" TextChanged="TextBox_TextChanged" Name="textBoxf1"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="215,150,0,0" Width="112" Name="textBoxf2"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="215,205,0,0" Width="112" Name="textBoxf3"/>
+        <TextBlock HorizontalAlignment="Left" Text="1" TextWrapping="Wrap" VerticalAlignment="Top" Margin="35,102,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="2" TextWrapping="Wrap" VerticalAlignment="Top" Margin="35,157,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="3" TextWrapping="Wrap" VerticalAlignment="Top" Margin="35,212,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="4" TextWrapping="Wrap" VerticalAlignment="Top" Margin="35,267,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="5" TextWrapping="Wrap" VerticalAlignment="Top" Margin="35,322,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="6" TextWrapping="Wrap" VerticalAlignment="Top" Margin="35,378,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="7" TextWrapping="Wrap" VerticalAlignment="Top" Margin="35,432,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="8" TextWrapping="Wrap" VerticalAlignment="Top" Margin="35,487,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="9" TextWrapping="Wrap" VerticalAlignment="Top" Margin="35,542,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="35,597,0,0"><Run Text="10"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador1" TextWrapping="Wrap" VerticalAlignment="Top" Margin="96,102,0,0" SelectionChanged="TextBlock_SelectionChanged_1" Name="labelf1"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador2" TextWrapping="Wrap" VerticalAlignment="Top" Margin="96,157,0,0" SelectionChanged="TextBlock_SelectionChanged_2" Name="labelf2"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador3" TextWrapping="Wrap" VerticalAlignment="Top" Margin="96,212,0,0" Name="labelf3"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador4" TextWrapping="Wrap" VerticalAlignment="Top" Margin="96,267,0,0" Name="labelf4"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador5" TextWrapping="Wrap" VerticalAlignment="Top" Margin="96,322,0,0" Name="labelf5"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador6" TextWrapping="Wrap" VerticalAlignment="Top" Margin="96,378,0,0" Name="labelf6"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador7" TextWrapping="Wrap" VerticalAlignment="Top" Margin="96,432,0,0" Name="labelf7"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador8" TextWrapping="Wrap" VerticalAlignment="Top" Margin="96,487,0,0" Name="labelf8"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador9" TextWrapping="Wrap" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged_3" Margin="96,542,0,0" Name="labelf9"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="215,260,0,0" Width="112" Name="textBoxf4"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="215,315,0,0" Width="112" Name="textBoxf5"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="215,425,0,0" Width="112" Name="textBoxf7"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Center" Margin="215,0,0,0" Width="112" Name="textBoxf6"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="215,480,0,0" Width="112" Name="textBoxf8"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="215,535,0,0" Width="112" Name="textBoxf9"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="215,597,0,0" Width="112" Name="textBoxf10"/>
+        <TextBlock HorizontalAlignment="Left" Text="Modo de Jogo" TextWrapping="Wrap" VerticalAlignment="Top" Margin="449,27,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="Fácil" TextWrapping="Wrap" VerticalAlignment="Top" Margin="235,57,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="Médio" TextWrapping="Wrap" VerticalAlignment="Top" Margin="802,57,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador1" TextWrapping="Wrap" VerticalAlignment="Top" Margin="647,102,0,0" Name="labelm1"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador2" TextWrapping="Wrap" VerticalAlignment="Top" Margin="647,157,0,0" Name="labelm2"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador3" TextWrapping="Wrap" VerticalAlignment="Top" Margin="647,212,0,0" Name="labelm3"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador4" TextWrapping="Wrap" VerticalAlignment="Top" Margin="647,267,0,0" Name="labelm4"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador5" TextWrapping="Wrap" VerticalAlignment="Top" Margin="647,322,0,0" SelectionChanged="TextBlock_SelectionChanged_4" Name="labelm5"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador6" TextWrapping="Wrap" VerticalAlignment="Top" Margin="647,378,0,0" Name="labelm6"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador7" TextWrapping="Wrap" VerticalAlignment="Top" Margin="647,432,0,0" Name="labelm7"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador8" TextWrapping="Wrap" VerticalAlignment="Top" Margin="647,487,0,0" Name="labelm8"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador9" TextWrapping="Wrap" VerticalAlignment="Top" Margin="647,542,0,0" Name="labelm9"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador10" TextWrapping="Wrap" VerticalAlignment="Top" Margin="647,597,0,0" Name="labelm10"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="765,102,0,0" Width="113" Name="textBoxm1"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="765,150,0,0" Width="112" Name="textBoxm2"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="765,205,0,0" Width="113" Name="textBoxm3"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="765,260,0,0" Width="113" Name="textBoxm4"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="765,315,0,0" Width="113" Name="textBoxm5"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="765,371,0,0" Width="113" Name="textBoxm6"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="765,425,0,0" Width="112" Name="textBoxm7"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="765,480,0,0" Width="112" Name="textBoxm8"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="765,535,0,0" Width="112" Name="textBoxm9"/>
+        <TextBox HorizontalAlignment="Left" Text="0" VerticalAlignment="Top" Margin="765,597,0,0" Width="112" Name="textBoxm10"/>
+        <TextBlock HorizontalAlignment="Left" Text="utilizador10" TextWrapping="Wrap" VerticalAlignment="Top" Margin="96,597,0,0" SelectionChanged="TextBlock_SelectionChanged_5" Name="labelf10"/>
+
+    </Grid>
+</Page>
