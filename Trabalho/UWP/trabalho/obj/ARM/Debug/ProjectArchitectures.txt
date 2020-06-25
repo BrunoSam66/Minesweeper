@@ -1,1 +1,1 @@
-C:\Users\crist\OneDrive\Ambiente de Trabalho\trabalho\UWP\trabalho\uwp.csproj;arm
+E:\Projecto\Trabalho\UWP\trabalho\uwp.csproj;arm
