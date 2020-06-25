@@ -5,7 +5,7 @@
     xmlns:local="using:perfil"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
+    mc:Ignorable="d" Loaded="Page_Loaded"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" MaxHeight="768" MaxWidth="800" MinHeight="768" MinWidth="800" Width="797.5" Height="766.5">
 
     <Grid Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -19,19 +19,19 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="191,540,0,0" RenderTransformOrigin="0.471,1.842" SelectionChanged="TextBlock_SelectionChanged_3"><Run Text="Vitória"/><Run Text="s"/><LineBreak/><Run/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="376,503,0,0" RenderTransformOrigin="0.471,1.842" SelectionChanged="TextBlock_SelectionChanged_3"><Run Text="Jogos"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Text="Fotografia" TextWrapping="Wrap" VerticalAlignment="Top" Margin="149,132,0,0" SelectionChanged="TextBlock_SelectionChanged_2"/>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="346,30,0,0" Source="/Assets/fig2.png"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,173,0,0" Width="252"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,229,0,0" Width="252"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,283,0,0" Width="252"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,334,0,0" Width="252" RenderTransformOrigin="0.502,0.344"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="451,561,0,0" Width="252"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="111,561,0,0" Width="252"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,386,0,0" Width="252"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="400,441,0,0" Width="254"/>
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="346,30,0,0" Source="/Assets/fig2.png" Name="pictureBox1"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,173,0,0" Width="252" Name="textBoxFirstName"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,229,0,0" Width="252" Name="textBoxLastName"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,283,0,0" Width="252" Name="textBoxUsername"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,334,0,0" Width="252" RenderTransformOrigin="0.502,0.344" Name="textBoxPassword"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="451,561,0,0" Width="252" Name="textBoxDJogos"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="111,561,0,0" Width="252" Name="textBoxVJogos"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="401,386,0,0" Width="252" Name="textBoxEmail"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="400,441,0,0" Width="254" Name="textBoxPais"/>
         <TextBlock HorizontalAlignment="Left" Text="Médio" TextWrapping="Wrap" VerticalAlignment="Top" Margin="551,645,0,0" SelectionChanged="TextBlock_SelectionChanged_1" RenderTransformOrigin="0.472,-0.263"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="191,645,0,0" RenderTransformOrigin="0.471,1.842" SelectionChanged="TextBlock_SelectionChanged_3"><Run Text="Fácil"/><LineBreak/><Run/></TextBlock>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,626,0,0" RenderTransformOrigin="0.471,1.842" SelectionChanged="TextBlock_SelectionChanged_3"><Run Text="Melhores tempos"/><LineBreak/><Run/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="451,669,0,0" Width="252"/>
-        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="111,669,0,0" Width="252"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="451,669,0,0" Width="252" Name="textBoxTMedio"/>
+        <TextBox HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Margin="111,669,0,0" Width="252" Name="textBoxTFacil"/>
     </Grid>
 </Page>

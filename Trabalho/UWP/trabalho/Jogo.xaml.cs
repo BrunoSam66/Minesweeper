@@ -29,12 +29,26 @@ namespace jogo
         {
             this.InitializeComponent();
 
+            /* (dificuldade == Dificuldade.facil)
+            {*/
+
             if (dificuldade == Dificuldade.facil)
             {
-                GerarMinas(mines1);
-
+                bombas = 10;
+                botoes_linha = 9;
+                quantidade_botoes = 81;
             }
-            /*else
+            else
+            {
+                bombas = 40;
+                botoes_linha = 16;
+                quantidade_botoes = 256;
+            }
+
+            GerarMinas(mines1);
+
+            /*}
+            else
             {
                 GerarMinas(mines2);
             }*/
@@ -118,6 +132,7 @@ namespace jogo
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             /*ContentDialog dialog = new ContentDialog()
             {
                 Title = "Game Over!!!",
@@ -133,6 +148,8 @@ namespace jogo
 
             isActive = true;
 
+            int bombasvolta = BombasVolta(botao);
+
             if (TemBomba(BotaoClicado) == true)
             {
                 //Abrir a bomba no button
@@ -141,7 +158,7 @@ namespace jogo
                 button.IsEnabled = false;
 
                 ResetTime();
-                isActive = false;
+                //isActive = false;
 
                 /*ContentDialog dialog = new ContentDialog()
                 {
@@ -161,69 +178,69 @@ namespace jogo
                     MedioToolStripMenuItem1_Click(null, null);
                 }*/
             }
-            else if (BombasVolta(BotaoClicado) == 1)
+            else if (bombasvolta == 1)
             {
                 button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
-                button.IsEnabled = false;
+                //button.IsEnabled = false;
 
 
             }
-            else if (BombasVolta(BotaoClicado) == 2)
+            else if (bombasvolta == 2)
             {
                 //img2
                 button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
-                button.IsEnabled = false;
+                //button.IsEnabled = false;
 
             }
-            else if (BombasVolta(BotaoClicado) == 3)
+            else if (bombasvolta == 3)
             {
                 /// im3
                 button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
-                button.IsEnabled = false;
+                //button.IsEnabled = false;
 
             }
-            else if (BombasVolta(BotaoClicado) == 4)
+            else if (bombasvolta == 4)
             {
                 //   im4 
                 button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
-                button.IsEnabled = false;
+                //button.IsEnabled = false;
 
             }
-            else if (BombasVolta(BotaoClicado) == 5)
+            else if (bombasvolta == 5)
             {
                 //Abrir imagem 5
                 button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
-                button.IsEnabled = false;
+                //button.IsEnabled = false;
 
             }
-            else if (BombasVolta(BotaoClicado) == 6)
+            else if (bombasvolta == 6)
             {
                 //Abrir imagem 6.png no button
                 button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
-                button.IsEnabled = false;
+                //button.IsEnabled = false;
 
             }
-            else if (BombasVolta(BotaoClicado) == 7)
+            else if (bombasvolta == 7)
             {
                 //AAbrir imagem 7.png no button
                 button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
-                button.IsEnabled = false;
+                //button.IsEnabled = false;
 
 
             }
-            else if (BombasVolta(BotaoClicado) == 8)
+            else if (bombasvolta == 8)
             {
                 //Abrir imagem 8.png no button
                 button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
-                button.IsEnabled = false;
+                //button.IsEnabled = false;
 
             }
             else
@@ -231,7 +248,7 @@ namespace jogo
                 //abrir imagem 0.png no button
                 button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
 
-                button.IsEnabled = false;
+                //button.IsEnabled = false;
 
                 /*
                 //MostrarTudo(BotaoClicado);
@@ -351,69 +368,72 @@ namespace jogo
             string diagonal_direita_cima = "Button" + (num_botao - botoes_linha + 1);
             string diagonal_direita_baixo = "Button" + (num_botao + botoes_linha + 1);
 
-            if ((num_botao - (botoes_linha - 1)) % botoes_linha != 0)
+            if (botoes_linha != 0)
             {
-                if (TemBomba(lado_direito) == true)
+                if ((num_botao - (botoes_linha - 1)) % botoes_linha != 0)
                 {
-                    bombas++;
-                }
-            }
-
-            if (num_botao % botoes_linha != 0 && num_botao != 0)
-            {
-                if (TemBomba(lado_esquerdo) == true)
-                {
-                    bombas++;
-                }
-            }
-
-
-            if (num_botao >= botoes_linha)
-            {
-                if (TemBomba(cima) == true)
-                {
-                    bombas++;
+                    if (TemBomba(lado_direito) == true)
+                    {
+                        bombas++;
+                    }
                 }
 
-            }
-
-            if (num_botao <= (quantidade_botoes - botoes_linha))
-            {
-                if (TemBomba(baixo) == true)
+                if (num_botao % botoes_linha != 0 && num_botao != 0)
                 {
-                    bombas++;
+                    if (TemBomba(lado_esquerdo) == true)
+                    {
+                        bombas++;
+                    }
                 }
-            }
 
-            if ((num_botao - (botoes_linha - 1)) % botoes_linha != 0 && num_botao <= (quantidade_botoes - botoes_linha))
-            {
-                if (TemBomba(diagonal_direita_baixo) == true)
+
+                if (num_botao >= botoes_linha)
                 {
-                    bombas++;
+                    if (TemBomba(cima) == true)
+                    {
+                        bombas++;
+                    }
+
                 }
-            }
 
-            if ((num_botao - (botoes_linha - 1)) % botoes_linha != 0 && num_botao >= 9)
-            {
-                if (TemBomba(diagonal_direita_cima) == true)
+                if (num_botao <= (quantidade_botoes - botoes_linha))
                 {
-                    bombas++;
+                    if (TemBomba(baixo) == true)
+                    {
+                        bombas++;
+                    }
                 }
-            }
 
-            if (num_botao % botoes_linha != 0 && num_botao >= botoes_linha && num_botao != 0)
-            {
-                if (TemBomba(diagonal_esquerda_cima) == true)
+                if ((num_botao - (botoes_linha - 1)) % botoes_linha != 0 && num_botao <= (quantidade_botoes - botoes_linha))
                 {
-                    bombas++;
+                    if (TemBomba(diagonal_direita_baixo) == true)
+                    {
+                        bombas++;
+                    }
                 }
-            }
 
-            if (num_botao % botoes_linha != 0 && num_botao <= (quantidade_botoes - botoes_linha) && num_botao != 0)
-            {
-                if (TemBomba(diagonal_esquerda_baixo) == true)
+                if ((num_botao - (botoes_linha - 1)) % botoes_linha != 0 && num_botao >= 9)
                 {
-                    bombas++;
+                    if (TemBomba(diagonal_direita_cima) == true)
+                    {
+                        bombas++;
+                    }
+                }
+
+                if (num_botao % botoes_linha != 0 && num_botao >= botoes_linha && num_botao != 0)
+                {
+                    if (TemBomba(diagonal_esquerda_cima) == true)
+                    {
+                        bombas++;
+                    }
+                }
+
+                if (num_botao % botoes_linha != 0 && num_botao <= (quantidade_botoes - botoes_linha) && num_botao != 0)
+                {
+                    if (TemBomba(diagonal_esquerda_baixo) == true)
+                    {
+                        bombas++;
+                    }
                 }
             }
 

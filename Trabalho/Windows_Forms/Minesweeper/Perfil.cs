@@ -40,7 +40,6 @@ namespace Minesweeper
 
         }
 
-
         private string firstName { get; set; }
         private string lastName { get; set; }
         private string userName { get; set; }
