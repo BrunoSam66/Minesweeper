@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\crist\\Source\\Repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj": {}
+    "C:\\Users\\crist\\Source\\Repos\\campominas2\\Trabalho\\UWP\\trabalho\\uwp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\crist\\Source\\Repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj": {
+    "C:\\Users\\crist\\Source\\Repos\\campominas2\\Trabalho\\UWP\\trabalho\\uwp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crist\\Source\\Repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\Source\\Repos\\campominas2\\Trabalho\\UWP\\trabalho\\uwp.csproj",
         "projectName": "uwp",
-        "projectPath": "C:\\Users\\crist\\Source\\Repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj",
+        "projectPath": "C:\\Users\\crist\\Source\\Repos\\campominas2\\Trabalho\\UWP\\trabalho\\uwp.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crist\\Source\\Repos\\campominas\\Trabalho\\UWP\\trabalho\\obj\\",
+        "outputPath": "C:\\Users\\crist\\Source\\Repos\\campominas2\\Trabalho\\UWP\\trabalho\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [

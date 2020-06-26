@@ -1,1 +1,1 @@
-C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\uwp.csproj;x86
+C:\Users\crist\Source\Repos\campominas2\Trabalho\UWP\trabalho\uwp.csproj;x86
