@@ -23,3 +23,4 @@ C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\De
 C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Windows Forms.csproj.CoreCompileInputs.cache
 C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.exe
 C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Minesweeper.pdb
+C:\Users\crist\Source\Repos\campominas\Trabalho\Windows_Forms\Minesweeper\obj\Debug\Windows Forms.csprojAssemblyReference.cache

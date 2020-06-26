@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\crist\\source\\repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj": {}
+    "C:\\Users\\crist\\Source\\Repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\crist\\source\\repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj": {
+    "C:\\Users\\crist\\Source\\Repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crist\\source\\repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\Source\\Repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj",
         "projectName": "uwp",
-        "projectPath": "C:\\Users\\crist\\source\\repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj",
+        "projectPath": "C:\\Users\\crist\\Source\\Repos\\campominas\\Trabalho\\UWP\\trabalho\\uwp.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crist\\source\\repos\\campominas\\Trabalho\\UWP\\trabalho\\obj\\",
+        "outputPath": "C:\\Users\\crist\\Source\\Repos\\campominas\\Trabalho\\UWP\\trabalho\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -22,20 +22,20 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "uap10.0.18362"
+          "uap10.0.17763"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "uap10.0.18362": {
+          "uap10.0.17763": {
             "projectReferences": {}
           }
         }
       },
       "frameworks": {
-        "uap10.0.18362": {
+        "uap10.0.17763": {
           "dependencies": {
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",

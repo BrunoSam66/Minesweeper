@@ -1,10 +1,14 @@
+using Minesweeper;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Input;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -29,30 +33,23 @@ namespace jogo
         {
             this.InitializeComponent();
 
-            /* (dificuldade == Dificuldade.facil)
-            {*/
-
             if (dificuldade == Dificuldade.facil)
             {
                 bombas = 10;
                 botoes_linha = 9;
                 quantidade_botoes = 81;
+                GerarMinas(mines1);
             }
             else
             {
                 bombas = 40;
                 botoes_linha = 16;
                 quantidade_botoes = 256;
-            }
-
-            GerarMinas(mines1);
-
-            /*}
-            else
-            {
                 GerarMinas(mines2);
-            }*/
+            }
         }
+
+        private string user;
 
         private enum Dificuldade { facil, medio }
         private Dificuldade dificuldade = Dificuldade.facil;
@@ -66,7 +63,7 @@ namespace jogo
         private int quantidade_botoes;
         private int botoes_linha;
 
-        string botao;
+        private string botao;
 
         private int time = 0;
         private bool isActive = false;
@@ -75,180 +72,101 @@ namespace jogo
 
         public object ImageLayout { get; private set; }
 
-        //função para redimensionar o forms falta
-
-
-        private void LayoutPanel(object sender, RoutedEvent e)
-        {
-            if (dificuldade == Dificuldade.facil)
-            {
-                GerarMinas(mines1);
-
-                DesenharPainel();
-            }
-            else
-            {
-                GerarMinas(mines2);
-
-                DesenharPainel();
-            }
-        }
-
-        private void DesenharPainel()
-        {
-            int i;
-
-            for (i = 0; i < quantidade_botoes; i++)
-            {
-                Button button = new Button(); //é preciso alterar o estilo 
-                button.Background = (SolidColorBrush)Resources["bluecolor"];
-                button.Content = " ";
-                button.Height = 26;
-                button.Width = 26;
-                button.Tag = i;    
-                button.Name = string.Format("Button{0}", i);
-               // button.Click += bunton_click; fazer o evento do click
-               
-              
-
-                if (dificuldade == Dificuldade.facil && (i + 1) % 9 == 0)
-                {
-                   // Panel.SetFlowBreak(button, true);
-                }
-                else if (dificuldade == Dificuldade.medio && (i + 1) % 16 == 0)
-                {
-                 //  Panel.SetFlowBreak(button, true);
-                }
-
-            }
-
-        }
-
         private void Right_Click(object sender, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e)
         {
             Button button = sender as Button;
-            button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
+
+            button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/bandeira.png")), Stretch = Stretch.None };
+            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            /*ContentDialog dialog = new ContentDialog()
-            {
-                Title = "Game Over!!!",
-                Content = "Try again!!!",
-                PrimaryButtonText = "OK"
-
-            };
-            await dialog.ShowAsync();*/
-
             Button button = (Button)sender;
             botao = button.Name;
             BotaoClicado = button.Name;
 
             isActive = true;
 
-            int bombasvolta = BombasVolta(botao);
-
             if (TemBomba(BotaoClicado) == true)
             {
                 //Abrir a bomba no button
-                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
-
-                button.IsEnabled = false;
+                
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/bomba.png")), Stretch = Stretch.None };
 
                 ResetTime();
-                //isActive = false;
 
-                /*ContentDialog dialog = new ContentDialog()
+                ContentDialog dialog = new ContentDialog()
                 {
                     Title = "Game Over!!!",
                     Content = "Try again!!!",
                     PrimaryButtonText = "OK"
 
                 };
-                await dialog.ShowAsync();*/
-
-                /*if (dificuldade == Dificuldade.facil)
+                await dialog.ShowAsync();
+                
+                if (dificuldade == Dificuldade.facil)
                 {
                     FacilToolStripMenuItem_Click(null, null);
                 }
-                else
+                /*else
                 {
                     MedioToolStripMenuItem1_Click(null, null);
                 }*/
             }
-            else if (bombasvolta == 1)
+            else if (BombasVolta(BotaoClicado) == 1)
             {
-                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
-
-                //button.IsEnabled = false;
-
-
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/1.png")), Stretch = Stretch.None };
+          
             }
-            else if (bombasvolta == 2)
+            else if (BombasVolta(BotaoClicado) == 2)
             {
                 //img2
-                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
-
-                //button.IsEnabled = false;
-
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/2.png")), Stretch = Stretch.None };
+                
             }
-            else if (bombasvolta == 3)
+            else if (BombasVolta(BotaoClicado) == 3)
             {
                 /// im3
-                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
-
-                //button.IsEnabled = false;
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/3.png")), Stretch = Stretch.None };
+                
 
             }
-            else if (bombasvolta == 4)
+            else if (BombasVolta(BotaoClicado) == 4)
             {
                 //   im4 
-                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
-
-                //button.IsEnabled = false;
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/4.png")), Stretch = Stretch.None };
+               
 
             }
-            else if (bombasvolta == 5)
+            else if (BombasVolta(BotaoClicado) == 5)
             {
                 //Abrir imagem 5
-                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
-
-                //button.IsEnabled = false;
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/5.png")), Stretch = Stretch.None };
 
             }
-            else if (bombasvolta == 6)
+            else if (BombasVolta(BotaoClicado) == 6)
             {
                 //Abrir imagem 6.png no button
-                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
-
-                //button.IsEnabled = false;
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/6.png")), Stretch = Stretch.None };
 
             }
-            else if (bombasvolta == 7)
+            else if (BombasVolta(BotaoClicado) == 7)
             {
                 //AAbrir imagem 7.png no button
-                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
-
-                //button.IsEnabled = false;
-
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/7.png")), Stretch = Stretch.None };
 
             }
-            else if (bombasvolta == 8)
+            else if (BombasVolta(BotaoClicado) == 8)
             {
                 //Abrir imagem 8.png no button
-                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
-
-                //button.IsEnabled = false;
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/8.png")), Stretch = Stretch.None };
 
             }
             else
             {
                 //abrir imagem 0.png no button
-                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/smile.png")), Stretch = Stretch.None };
-
-                //button.IsEnabled = false;
+                button.Background = new ImageBrush { ImageSource = new BitmapImage(new Uri(this.BaseUri, "Assets/0.png")), Stretch = Stretch.None };
 
                 /*
                 //MostrarTudo(BotaoClicado);
@@ -326,7 +244,7 @@ namespace jogo
                 {
                     mina = "Button" + mines1[i];
 
-                    if (mina == botao)
+                    if (mina == Convert.ToString(botao))
                     {
                         resultado++;
                     }
@@ -338,7 +256,7 @@ namespace jogo
                 {
                     mina = "Button" + mines2[i];
 
-                    if (mina == botao)
+                    if (mina == Convert.ToString(botao))
                     {
                         resultado++;
                     }
@@ -457,22 +375,6 @@ namespace jogo
             return val;
         }
 
-        private void Jogo_Load(object sender, EventArgs e)
-        {
-            if (dificuldade == Dificuldade.facil)
-            {
-                bombas = 10;
-                botoes_linha = 9;
-                quantidade_botoes = 81;
-            }
-            else
-            {
-                bombas = 40;
-                botoes_linha = 16;
-                quantidade_botoes = 256;
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             int i;
@@ -501,29 +403,114 @@ namespace jogo
             time = 0;
         }
 
-        private void MedioToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void MedioToolStripMenuItem1_Click(object sender, RoutedEventArgs e)
         {
-            isActive = false;
+            /*isActive = false;
             ResetTime();
 
             dificuldade = Dificuldade.medio;
-            Jogo_Load(null, null);
 
-           /* ChangeSize(502, 570);
-            Panel.Size = new Size(450, 450);
+             ChangeSize(502, 570);
+             Panel.Size = new Size(450, 450);
 
-            menuStrip1.Size = new Size(502, 24);
+             menuStrip1.Size = new Size(502, 24);
 
-            Panel.Controls.Clear();*/
+             Panel.Controls.Clear();*/
         }
 
-        private void FacilToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FacilToolStripMenuItem_Click(object sender, RoutedEventArgs e)
         {
             isActive = false;
             ResetTime();
 
             dificuldade = Dificuldade.facil;
-            Jogo_Load(null, null);
+            
+            Button0.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button1.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button2.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button3.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button4.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button5.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button6.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button7.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button8.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button9.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button10.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button11.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button12.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button13.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button14.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button15.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button16.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button17.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button18.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button19.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button20.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button21.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button22.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button23.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button24.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button25.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button26.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button27.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button28.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button29.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button30.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button31.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button32.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button33.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button34.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button35.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button36.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button37.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button38.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button39.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button40.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button41.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button42.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button43.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button44.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button45.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button46.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button47.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button48.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button49.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button50.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button51.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button52.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button53.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button54.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button55.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button56.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button57.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button58.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button59.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button60.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button61.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button62.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button63.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button64.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button65.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button66.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button67.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button68.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button69.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button70.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button71.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button72.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button73.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button74.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button75.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button76.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button77.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button78.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button79.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+            Button80.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.LightGray);
+
+            bombas = 10;
+            botoes_linha = 9;
+            quantidade_botoes = 81;
+            GerarMinas(mines1);
 
             /*ChangeSize(310, 370);
             Panel.Size = new Size(270, 253);
@@ -1021,14 +1008,27 @@ namespace jogo
         //---------------------------------------------------------------------------------------
         private void ButtonJogo_Click(object sender, RoutedEventArgs e)
         {
-
+            FacilToolStripMenuItem_Click(null, null);
         }
 
         private void Perfil_Click(object sender, RoutedEventArgs e)
         {
-            Frame view = new Frame();
-            this.Frame.Navigate(typeof(perfil.MainPage));
+
+            var values = new MainPage();
+            values.user = Convert.ToString(user);
+
+            Frame.Navigate(typeof(perfil.MainPage), values);
+
         }
 
+        private void Top10_Click(object sender, RoutedEventArgs e)
+        {
+            Frame view = new Frame();
+            this.Frame.Navigate(typeof(Minesweeper.Top10));
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,15 @@
 WinMetadata\Windows.winmd
+Assets\0.png
+Assets\1.png
+Assets\2.png
+Assets\3.png
+Assets\4.png
+Assets\5.png
+Assets\6.png
+Assets\7.png
+Assets\8.png
+Assets\bandeira.png
+Assets\bomba.png
 Assets\fig2.png
 Assets\id.png
 Assets\LockScreenLogo.scale-200.png
@@ -16,4 +27,5 @@ Login.xbf
 Minesweeper.xr.xml
 Perfil.xbf
 Registo.xbf
+Top10.xbf
 Properties\Default.rd.xml

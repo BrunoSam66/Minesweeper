@@ -29,13 +29,11 @@ namespace Minesweeper
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class Top10 : Page
-    {
-        
-
+    { 
         public Top10()
         {
             this.InitializeComponent();
-         
+            Servidor_Top10();
         }
 
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)

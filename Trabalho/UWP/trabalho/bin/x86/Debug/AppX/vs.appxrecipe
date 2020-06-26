@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>1e1852c9-00fa-4dd8-bb61-59a3575ebdf8</PackageIdentityName>
     <PackageIdentityPublisher>CN=telmo</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>433AF8362E321864D5E75A2E3522F810B4BFC1ABE2842F0E719E1CE05914B5C8</RegisteredManifestChecksum>
+    <LayoutDir>C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>3BFBF3E1350A944DE4E3582AABA66976AAAB52EE792F6D6DEAFE8A6B15155152</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>1e1852c9-00fa-4dd8-bb61-59a3575ebdf8_1.0.0.0_x86__56zpnd7d081vc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>1e1852c9-00fa-4dd8-bb61-59a3575ebdf8_56zpnd7d081vc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>1e1852c9-00fa-4dd8-bb61-59a3575ebdf8</RegisteredPackageID>
@@ -27,16 +27,16 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-06-25T10:46:44.280</Modified>
+      <Modified>2020-06-26T18:25:42.524</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Minesweeper.exe">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Minesweeper.exe">
       <PackagePath>entrypoint\Minesweeper.exe</PackagePath>
-      <Modified>2020-06-25T10:46:43.554</Modified>
+      <Modified>2020-06-26T18:25:40.446</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.10\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -46,95 +46,143 @@
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2019-03-18T17:36:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Assets\fig2.png">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\0.png">
+      <PackagePath>Assets\0.png</PackagePath>
+      <Modified>2020-06-18T10:35:02.368</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\1.png">
+      <PackagePath>Assets\1.png</PackagePath>
+      <Modified>2020-06-18T10:35:02.369</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\2.png">
+      <PackagePath>Assets\2.png</PackagePath>
+      <Modified>2020-06-18T10:35:02.369</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\3.png">
+      <PackagePath>Assets\3.png</PackagePath>
+      <Modified>2020-06-18T10:35:02.370</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\4.png">
+      <PackagePath>Assets\4.png</PackagePath>
+      <Modified>2020-06-18T10:35:02.370</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\5.png">
+      <PackagePath>Assets\5.png</PackagePath>
+      <Modified>2020-06-18T10:35:02.371</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\6.png">
+      <PackagePath>Assets\6.png</PackagePath>
+      <Modified>2020-06-18T10:35:02.371</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\7.png">
+      <PackagePath>Assets\7.png</PackagePath>
+      <Modified>2020-06-18T10:35:02.372</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\8.png">
+      <PackagePath>Assets\8.png</PackagePath>
+      <Modified>2020-06-18T10:35:02.372</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\bandeira.png">
+      <PackagePath>Assets\bandeira.png</PackagePath>
+      <Modified>2020-06-18T10:35:02.377</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\bomba.png">
+      <PackagePath>Assets\bomba.png</PackagePath>
+      <Modified>2020-06-18T10:35:02.378</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\fig2.png">
       <PackagePath>Assets\fig2.png</PackagePath>
       <Modified>2020-06-18T10:35:02.379</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Assets\id.png">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\id.png">
       <PackagePath>Assets\id.png</PackagePath>
       <Modified>2020-06-18T10:35:02.380</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Assets\min.png">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\min.png">
       <PackagePath>Assets\min.png</PackagePath>
       <Modified>2020-06-18T10:35:02.381</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Assets\smile.png">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\smile.png">
       <PackagePath>Assets\smile.png</PackagePath>
       <Modified>2020-06-18T10:35:02.382</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2020-06-18T10:35:02.373</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-06-18T10:35:02.374</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-06-18T10:35:02.374</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-06-18T10:35:02.375</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-06-18T10:35:02.376</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-06-18T10:35:02.376</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2020-06-18T10:35:02.377</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2020-06-18T10:35:02.389</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Minesweeper.xr.xml">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Minesweeper.xr.xml">
       <PackagePath>Minesweeper.xr.xml</PackagePath>
-      <Modified>2020-06-25T10:06:23.727</Modified>
+      <Modified>2020-06-26T16:52:53.154</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-06-25T10:44:47.774</Modified>
+      <Modified>2020-06-26T18:25:40.145</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Jogo.xbf">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Jogo.xbf">
       <PackagePath>Jogo.xbf</PackagePath>
-      <Modified>2020-06-25T10:44:47.762</Modified>
+      <Modified>2020-06-26T18:25:40.129</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Login.xbf">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Login.xbf">
       <PackagePath>Login.xbf</PackagePath>
-      <Modified>2020-06-25T10:44:47.774</Modified>
+      <Modified>2020-06-26T18:25:40.145</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Perfil.xbf">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Perfil.xbf">
       <PackagePath>Perfil.xbf</PackagePath>
-      <Modified>2020-06-25T10:44:47.771</Modified>
+      <Modified>2020-06-26T18:25:40.135</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Registo.xbf">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Registo.xbf">
       <PackagePath>Registo.xbf</PackagePath>
-      <Modified>2020-06-25T10:44:47.774</Modified>
+      <Modified>2020-06-26T18:25:40.146</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Top10.xbf">
+      <PackagePath>Top10.xbf</PackagePath>
+      <Modified>2020-06-26T18:25:40.145</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2019-03-18T16:33:42.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-06-25T10:42:00.585</Modified>
+      <Modified>2020-06-26T18:25:40.927</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\source\repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Core\Minesweeper.exe">
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\campominas\Trabalho\UWP\trabalho\bin\x86\Debug\Core\Minesweeper.exe">
       <PackagePath>Minesweeper.exe</PackagePath>
-      <Modified>2020-06-25T10:46:44.273</Modified>
+      <Modified>2020-06-26T18:25:42.510</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

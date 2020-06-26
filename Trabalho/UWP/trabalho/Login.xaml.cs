@@ -70,6 +70,9 @@ namespace login
         private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
         {
             modoDeJogo = ModoDeJogo.offline;
+
+            Frame view = new Frame();
+            this.Frame.Navigate(typeof(jogo.MainPage));
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -87,7 +90,7 @@ namespace login
             XDocument xmlPedido = XDocument.Parse("<credenciais><username></username><password></password></credenciais>");
             //preenche os dados no XML
             xmlPedido.Element("credenciais").Element("username").Value = UserTextBox.Text; // colocar aqui o username do utilizador
-            xmlPedido.Element("credenciais").Element("password").Value = PassTextBox.Text; // colocar aqui a palavra passe do utilizador
+            xmlPedido.Element("credenciais").Element("password").Value = PassTextBox.Password; // colocar aqui a palavra passe do utilizador
 
             string mensagem = xmlPedido.Root.ToString();
 
@@ -134,10 +137,7 @@ namespace login
 
                 Utilizador = Convert.ToString(UserTextBox.Text);
 
-                var parameters = new MainPage();
-                parameters.Utilizador = Utilizador;
-                parameters.id = id;
-                Frame.Navigate(typeof(jogo.MainPage), parameters);
+                Frame.Navigate(typeof(jogo.MainPage));
             }
         }
     }

@@ -1,25 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -33,7 +27,7 @@ namespace increver
         public MainPage()
         {
             this.InitializeComponent();
-            //paises();
+            paises();
         }
 
         private string firstName { get; set; }
@@ -226,10 +220,44 @@ namespace increver
             }
         }
 
-        private async void FotoBase64(Image file)
+        private async void FotoBase64(Image ImageControl) 
         {
+            /*byte[] imageArray;
 
-            //fotografia = Convert.ToBase64String(Image.);
+            using (Stream stream = await file.OpenStreamForReadAsync())
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    stream.CopyTo(memoryStream);
+                    imageArray = memoryStream.ToArray();
+                }
+            }
+
+            string base64Text = Convert.ToBase64String(imageArray);
+            string fileEXT = file.Path.ToString();
+            fotografia = base64Text;*/
+
+            var bitmap = new RenderTargetBitmap();
+            await bitmap.RenderAsync(ImageControl);
+
+            var image = (await bitmap.GetPixelsAsync()).ToArray();
+            var width = (uint)bitmap.PixelWidth;
+            var height = (uint)bitmap.PixelHeight;
+
+            double dpiX = 96;
+            double dpiY = 96;
+
+            var encoded = new InMemoryRandomAccessStream();
+            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.PngEncoderId, encoded);
+
+            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, width, height, dpiX, dpiY, image);
+            await encoder.FlushAsync();
+            encoded.Seek(0);
+
+            var bytes = new byte[encoded.Size];
+            await encoded.AsStream().ReadAsync(bytes, 0, bytes.Length);
+
+            fotografia = Convert.ToBase64String(bytes);
         }
 
         private async void Registo(object sender, RoutedEventArgs e)
@@ -401,21 +429,6 @@ namespace increver
 
                 registo = "erro";
             }
-            /*else if (pictureBox1.Image == null)
-            {
-                //MessageBox.Show("Deve colocar uma imagem!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                ContentDialog dialog = new ContentDialog()
-                {
-                    Title = "Erro",
-                    Content = "Deve colocar uma imagem!",
-                    PrimaryButtonText = "OK"
-
-                };
-                await dialog.ShowAsync();
-
-                registo = "erro";
-            }*/
             else
             {
                 firstName = Convert.ToString(textBoxFirstName.Text);
@@ -424,7 +437,7 @@ namespace increver
                 password = Convert.ToString(textBoxPassword.Text);
                 email = Convert.ToString(textBoxEmail.Text);
                 pais = Convert.ToString(comboBoxPais.Text);
-                //fotografia = FotoBase64(pictureBox1.Image);
+                FotoBase64(pictureBox1);
                 registo = "ok";
             }
         }
@@ -449,7 +462,7 @@ namespace increver
                 xmlPedido.Element("registo").Element("username").Value = userName;
                 xmlPedido.Element("registo").Element("password").Value = password;
                 xmlPedido.Element("registo").Element("email").Value = email;
-                //xmlPedido.Element("registo").Element("fotografia").Value = "data:image/png;base64," + fotografia;
+                xmlPedido.Element("registo").Element("fotografia").Value = "data:image/png;base64," + fotografia;
                 xmlPedido.Element("registo").Element("pais").Value = pais;
 
                 string mensagem = xmlPedido.Root.ToString();
@@ -507,8 +520,6 @@ namespace increver
                     this.Frame.Navigate(typeof(login.MainPage));
                 }
             }
-
-
         }
 
         private async void Button_Click_1(object sender, RoutedEventArgs e)

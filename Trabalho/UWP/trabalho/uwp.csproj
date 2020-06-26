@@ -11,7 +11,7 @@
     <AssemblyName>Minesweeper</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -143,6 +143,17 @@
     <None Include="trabalho_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\0.png" />
+    <Content Include="Assets\1.png" />
+    <Content Include="Assets\2.png" />
+    <Content Include="Assets\3.png" />
+    <Content Include="Assets\4.png" />
+    <Content Include="Assets\5.png" />
+    <Content Include="Assets\6.png" />
+    <Content Include="Assets\7.png" />
+    <Content Include="Assets\8.png" />
+    <Content Include="Assets\bandeira.png" />
+    <Content Include="Assets\bomba.png" />
     <Content Include="Assets\fig2.png" />
     <Content Include="Assets\id.png" />
     <Content Include="Assets\min.png" />
