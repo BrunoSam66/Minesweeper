@@ -377,7 +377,7 @@ namespace jogo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int i;
+            //int i;
             isActive = false;
             ResetTime();
 
