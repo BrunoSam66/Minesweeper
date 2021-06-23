@@ -1,4 +1,1 @@
 # CampoMinas
-
-# Minesweeper
-# minesweeper
